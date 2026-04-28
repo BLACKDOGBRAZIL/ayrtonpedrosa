@@ -18,16 +18,16 @@ export function Hero() {
         <div className="mx-auto max-w-4xl">
           {/* Framed logo block — Alfonsin-style */}
           <div className="mx-auto mb-10 inline-block border border-gold/60 px-12 py-8 backdrop-blur-sm">
-            <h1 className="font-serif text-5xl font-semibold tracking-wide text-foreground md:text-7xl lg:text-8xl">
+            <h1 className="font-serif text-5xl font-semibold tracking-wide text-white md:text-7xl lg:text-8xl">
               Ayrton <span className="italic text-gold">Pedrosa</span>
             </h1>
             <div className="mx-auto mt-3 h-px w-24 gold-divider" />
-            <p className="mt-3 text-xs uppercase tracking-[0.5em] text-foreground/85 md:text-sm">
+            <p className="mt-3 text-xs uppercase tracking-[0.5em] text-white/90 md:text-sm">
               Advocacia Estratégica
             </p>
           </div>
 
-          <p className="mx-auto mt-8 max-w-2xl font-serif text-xl italic leading-relaxed text-foreground/90 md:text-2xl">
+          <p className="mx-auto mt-8 max-w-2xl font-serif text-xl italic leading-relaxed text-white/95 md:text-2xl">
             Estratégia jurídica no agronegócio. Soluções legais inovadoras e personalizadas para produtores rurais, cooperativas e empresários do campo.
           </p>
 
@@ -35,7 +35,7 @@ export function Hero() {
             <Button asChild variant="hero" size="lg">
               <a href="#contato">Agendar Consulta</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="text-foreground/80 hover:text-gold hover:bg-transparent text-xs uppercase tracking-[0.2em]">
+            <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-gold hover:bg-transparent text-xs uppercase tracking-[0.2em]">
               <a href="#sobre">Conheça o Escritório →</a>
             </Button>
           </div>
@@ -45,7 +45,7 @@ export function Hero() {
       {/* scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/60">
         <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.4em]">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-white/60">Scroll</span>
           <div className="h-12 w-px bg-gradient-to-b from-gold/80 to-transparent" />
         </div>
       </div>
