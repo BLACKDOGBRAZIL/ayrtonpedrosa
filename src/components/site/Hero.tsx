@@ -37,7 +37,7 @@ export function Hero() {
               className="mx-auto mt-3 h-px gold-divider" 
             />
             <p className="mt-3 text-xs uppercase tracking-[0.5em] text-white/90 md:text-sm">
-              Advocacia Estratégica
+              Advocacia
             </p>
           </motion.div>
 

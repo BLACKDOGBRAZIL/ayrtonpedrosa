@@ -36,7 +36,7 @@ const areas: Area[] = [
   {
     number: "05",
     title: "Regularização, Multas & Cooperativas",
-    description: "Regularização fundiária, defesa administrativa e suporte jurídico estratégico a cooperativas.",
+    description: "Regularização fundiária, defesa administrativa e suporte jurídico especializado a cooperativas.",
     icons: [MapPin, Gavel, Tractor],
   },
 ];
@@ -59,7 +59,7 @@ export function Areas() {
             </h2>
           </div>
           <p className="text-base leading-relaxed text-velvet/70 md:col-span-5 md:text-lg">
-            Atuação especializada e estratégica em todas as áreas que impactam o produtor rural, a cooperativa e o empresário do campo.
+            Atuação técnica e especializada em todas as áreas que impactam o produtor rural, a cooperativa e o empresário do campo.
           </p>
         </motion.div>
 
@@ -104,7 +104,7 @@ export function Areas() {
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">— Consultoria —</p>
               <h3 className="mt-8 font-serif text-2xl font-medium leading-tight md:text-3xl text-white">
-                Cada caso merece uma <span className="italic text-gold">estratégia</span> única.
+                Cada caso merece uma <span className="italic text-gold">solução</span> única.
               </h3>
             </div>
             <a

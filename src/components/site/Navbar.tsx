@@ -45,7 +45,7 @@ export function Navbar() {
           <span className="font-serif text-xl font-bold tracking-widest text-white md:text-2xl transition-colors group-hover:text-gold">
             Ayrton <span className="italic text-gold group-hover:text-white">Pedrosa</span>
           </span>
-          <span className="text-[8px] uppercase tracking-[0.4em] text-white/60">Advocacia Estratégica</span>
+          <span className="text-[8px] uppercase tracking-[0.4em] text-white/60">ADVOCACIA</span>
         </a>
 
         {/* Desktop Navigation */}

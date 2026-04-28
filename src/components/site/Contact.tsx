@@ -44,7 +44,7 @@ export function Contact() {
               Pronto para <span className="italic text-gold">proteger</span> o seu legado?
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-velvet/70 max-w-lg">
-              Agende uma consulta estratégica. Nossa equipe está pronta para oferecer a segurança jurídica que sua operação agropecuária exige.
+              Agende uma consulta especializada. Nossa equipe está pronta para oferecer a segurança jurídica que sua operação agropecuária exige.
             </p>
 
             <div className="mt-12 space-y-10">
@@ -167,7 +167,7 @@ export function Contact() {
                     )}
                   </Button>
                   <p className="text-[10px] text-center text-velvet/40 uppercase tracking-widest font-medium">
-                    Conectado ao sistema de gestão estratégica
+                    Conectado ao sistema de gestão jurídica
                   </p>
                 </motion.form>
               )}

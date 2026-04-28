@@ -14,7 +14,7 @@ export function About() {
         >
           <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— O Escritório —</p>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-6xl">
-            Tradição, ética e <span className="italic text-gold">estratégia</span> a serviço do agronegócio.
+            Tradição, ética e <span className="italic text-gold">excelência</span> a serviço do agronegócio.
           </h2>
           <div className="mx-auto mt-8 h-px w-32 gold-divider" />
         </motion.div>
@@ -58,7 +58,7 @@ export function About() {
               Ayrton Pedrosa Advocacia atua com compromisso e visão de futuro, oferecendo soluções jurídicas pensadas para a realidade do agronegócio brasileiro. Nosso trabalho é guiar produtores, cooperativas e empresários através das complexas legislações fundiárias e ambientais.
             </p>
             <p className="mt-5 text-base leading-[1.9] text-velvet/60 md:text-lg">
-              Combinamos profundo conhecimento técnico com uma abordagem estratégica e personalizada, sempre com foco no <span className="font-medium text-velvet">crescimento sustentável</span> e na <span className="font-medium text-velvet">proteção patrimonial</span> dos nossos clientes.
+              Combinamos profundo conhecimento técnico com uma abordagem especializada e personalizada, sempre com foco no <span className="font-medium text-velvet">crescimento sustentável</span> e na <span className="font-medium text-velvet">proteção patrimonial</span> dos nossos clientes.
             </p>
 
             <div className="mt-12 grid grid-cols-3 gap-6 border-t border-cream pt-10">

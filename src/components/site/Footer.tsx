@@ -25,7 +25,7 @@ export function Footer({ year }: { year: number }) {
           <div className="font-serif text-3xl font-semibold text-white md:text-4xl">
             Ayrton <span className="italic text-gold">Pedrosa</span>
           </div>
-          <p className="mt-3 text-[11px] uppercase tracking-[0.5em] text-gold">Advocacia Estratégica</p>
+          <p className="mt-3 text-[11px] uppercase tracking-[0.5em] text-gold">Advocacia</p>
           <p className="mt-8 max-w-sm text-base leading-relaxed text-white/60 font-light">
             Estratégia jurídica especializada para produtores rurais, cooperativas e empresários do agronegócio brasileiro.
           </p>
