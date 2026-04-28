@@ -21,14 +21,14 @@ function Index() {
         <Hero />
         <About />
         <Areas />
-        <section id="blog" className="relative bg-background py-28 md:py-40">
+        <section id="blog" className="relative bg-cream py-28 md:py-40">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Blog —</p>
-            <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-foreground md:text-6xl">
+            <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-cream-foreground md:text-6xl">
               Insights sobre o <span className="italic text-gold">agronegócio</span>.
             </h2>
             <div className="mx-auto mt-8 h-px w-32 gold-divider" />
-            <p className="mt-8 text-base leading-relaxed text-foreground/70 md:text-lg">
+            <p className="mt-8 text-base leading-relaxed text-cream-muted md:text-lg">
               Em breve: artigos, análises e atualizações sobre legislação agrária, ambiental e do agronegócio brasileiro.
             </p>
           </div>
