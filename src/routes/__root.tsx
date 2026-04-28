@@ -33,10 +33,14 @@ export const Route = createRootRoute({
       { name: "description", content: "Advocacia estratégica em Agronegócio, Ambiental, Imobiliário e Inventários. Soluções jurídicas para produtores rurais, cooperativas e empresários do campo." },
       { name: "author", content: "Ayrton Pedrosa Advocacia" },
       { property: "og:title", content: "Ayrton Pedrosa Advocacia | Estratégia Jurídica no Agronegócio" },
-      { property: "og:description", content: "Soluções legais inovadoras e personalizadas para o agronegócio brasileiro." },
+      { property: "og:description", content: "Advocacia estratégica em Agronegócio, Ambiental, Imobiliário e Inventários. Soluções jurídicas para produtores rurais, cooperativas e empresários do campo." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Ayrton Pedrosa Advocacia | Estratégia Jurídica no Agronegócio" },
+      { name: "twitter:description", content: "Advocacia estratégica em Agronegócio, Ambiental, Imobiliário e Inventários. Soluções jurídicas para produtores rurais, cooperativas e empresários do campo." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png" },
     ],
     links: [
       {
