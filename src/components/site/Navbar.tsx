@@ -143,11 +143,23 @@ export function Navbar() {
                   <ChevronRight className="h-4 w-4 text-gold" />
                 </a>
               ))}
-              <div className="pt-4 space-y-4">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Fale Conosco</p>
-                <a href="#contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Agendar Reunião</a>
-                <a href="#contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Contato</a>
-                <a href="mailto:rh@ayrtonpedrosa.com" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Trabalhe Conosco</a>
+              <div className="pt-4 space-y-4 border-t border-white/10 mt-2">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Acesso Restrito</p>
+                <Link 
+                  to="/login" 
+                  className="flex items-center gap-3 text-white font-serif text-lg hover:text-gold transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <UserCircle className="h-5 w-5 text-gold" />
+                  Portal do Advogado
+                </Link>
+                
+                <div className="pt-4 space-y-4">
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Fale Conosco</p>
+                  <a href="#contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Agendar Reunião</a>
+                  <a href="#contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Contato</a>
+                  <a href="mailto:rh@ayrtonpedrosa.com" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Trabalhe Conosco</a>
+                </div>
               </div>
             </div>
           </motion.div>

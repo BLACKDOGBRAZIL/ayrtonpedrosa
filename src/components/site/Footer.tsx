@@ -38,7 +38,7 @@ export function Footer({ year }: { year: number }) {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
                 <Mail className="h-4 w-4" />
               </div>
-              <span className="group-hover:text-white transition-colors text-base font-serif italic">contato@ayrtonpedrosa.com</span>
+              <span className="group-hover:text-white transition-colors text-base font-serif italic break-words leading-tight">contato@ayrtonpedrosa.com</span>
             </li>
             <li className="flex items-center gap-4 group cursor-pointer">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
