@@ -1,18 +1,38 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
+import { Instagram, ExternalLink, Loader2 } from "lucide-react";
+
+interface InstagramPost {
+  id: string;
+  mediaUrl: string;
+  permalink: string;
+  mediaType: string;
+  thumbnailUrl?: string;
+  caption?: string;
+}
 
 export function InstagramFeed() {
+  const [posts, setPosts] = useState<InstagramPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.elfsight.com/platform/platform.js";
-    script.setAttribute("data-use-service-core", "");
-    script.defer = true;
-    document.head.appendChild(script);
+    async function fetchFeed() {
+      try {
+        const response = await fetch("https://feeds.behold.so/GwvfrRGLkEySIzaNRQOf");
+        const data = await response.json();
+        setPosts(data.slice(0, 6)); // Pegar as 6 fotos mais recentes
+      } catch (error) {
+        console.error("Erro ao carregar feed do Instagram:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchFeed();
   }, []);
 
   return (
-    <section className="bg-cream py-24 md:py-32 overflow-hidden">
+    <section className="bg-cream py-24 md:py-32 overflow-hidden border-t border-stone-100">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -44,26 +64,50 @@ export function InstagramFeed() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex items-center gap-2 text-velvet/60 hover:text-gold transition-colors font-medium tracking-wide"
+            className="flex items-center gap-2 text-velvet/60 hover:text-gold transition-colors font-medium tracking-wide group"
           >
             <Instagram className="h-5 w-5" />
-            @ayrtonpedrosa.adv
+            <span className="border-b border-transparent group-hover:border-gold transition-all">@ayrtonpedrosa.adv</span>
           </motion.a>
         </div>
 
-        {/* Instagram Widget Container */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full rounded-3xl overflow-hidden"
-        >
-          {/* Elfsight Widget Implementation */}
-          <div className="elfsight-app-YOUR_WIDGET_ID_HERE" data-elfsight-app-lazy></div>
-          
-          {/* Script loader can be added to index.html or here via useEffect */}
-        </motion.div>
+        {loading ? (
+          <div className="flex h-64 items-center justify-center">
+            <Loader2 className="h-8 w-8 text-gold animate-spin" />
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {posts.map((post, index) => (
+              <motion.a
+                key={post.id}
+                href={post.permalink}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative aspect-square overflow-hidden rounded-2xl bg-stone-100 shadow-lg"
+              >
+                <img 
+                  src={post.mediaType === "VIDEO" ? post.thumbnailUrl : post.mediaUrl} 
+                  alt={post.caption || "Instagram Post"} 
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-velvet/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center p-6 text-center">
+                  <div className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
+                    <ExternalLink className="h-8 w-8 text-gold mx-auto mb-3" />
+                    <p className="text-white/90 text-xs font-sans line-clamp-3 leading-relaxed uppercase tracking-widest italic">
+                      Ver publicação completa
+                    </p>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        )}
 
         <div className="mt-16 text-center">
           <motion.a
@@ -72,7 +116,7 @@ export function InstagramFeed() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-velvet text-white px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold shadow-xl hover:bg-gold hover:text-velvet transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-velvet text-white px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold shadow-xl hover:bg-gold hover:text-velvet transition-all duration-300 border border-white/5"
           >
             Seguir Perfil Oficial
           </motion.a>
