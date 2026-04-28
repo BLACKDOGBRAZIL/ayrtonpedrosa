@@ -3,7 +3,6 @@ import { Mail, Phone, Instagram, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 export function Contact() {
@@ -20,70 +19,80 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" className="bg-background py-24 md:py-32">
+    <section id="contato" className="relative bg-background py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary/70">Contato</span>
-          <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-primary md:text-5xl">
-            Vamos conversar sobre sua estratégia jurídica
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Fale Conosco —</p>
+          <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-foreground md:text-6xl">
+            Vamos conversar sobre sua <span className="italic text-gold">estratégia jurídica</span>.
           </h2>
+          <div className="mx-auto mt-8 h-px w-32 gold-divider" />
         </div>
-        <div className="mt-16 grid gap-12 md:grid-cols-5">
-          <form onSubmit={onSubmit} className="md:col-span-3 space-y-5 rounded-md border border-border bg-card p-8 shadow-[var(--shadow-card)]">
-            <div>
-              <Label htmlFor="name">Nome</Label>
-              <Input id="name" required placeholder="Seu nome completo" className="mt-2" />
-            </div>
-            <div>
-              <Label htmlFor="email">E-mail</Label>
-              <Input id="email" type="email" required placeholder="seu@email.com" className="mt-2" />
-            </div>
-            <div>
-              <Label htmlFor="message">Mensagem</Label>
-              <Textarea id="message" required rows={5} placeholder="Como podemos ajudar?" className="mt-2" />
-            </div>
-            <Button type="submit" variant="hero" size="lg" disabled={loading} className="w-full">
+
+        <div className="mt-20 grid gap-16 md:grid-cols-12 md:gap-20">
+          <form onSubmit={onSubmit} className="space-y-8 md:col-span-7">
+            <FormField label="Nome">
+              <Input id="name" required placeholder="Seu nome completo" className="border-0 border-b border-border bg-transparent rounded-none px-0 py-3 text-foreground placeholder:text-foreground/30 focus-visible:ring-0 focus-visible:border-gold transition-colors" />
+            </FormField>
+            <FormField label="E-mail">
+              <Input id="email" type="email" required placeholder="seu@email.com" className="border-0 border-b border-border bg-transparent rounded-none px-0 py-3 text-foreground placeholder:text-foreground/30 focus-visible:ring-0 focus-visible:border-gold transition-colors" />
+            </FormField>
+            <FormField label="Mensagem">
+              <Textarea id="message" required rows={5} placeholder="Como podemos ajudar?" className="border-0 border-b border-border bg-transparent rounded-none px-0 py-3 text-foreground placeholder:text-foreground/30 focus-visible:ring-0 focus-visible:border-gold transition-colors resize-none" />
+            </FormField>
+            <Button type="submit" variant="hero" size="lg" disabled={loading}>
               {loading ? "Enviando..." : "Enviar Mensagem"}
             </Button>
           </form>
-          <div className="md:col-span-2 space-y-6">
-            <ContactItem icon={Mail} label="E-mail" value="contato@ayrtonpedrosa.adv.br" href="mailto:contato@ayrtonpedrosa.adv.br" />
-            <ContactItem icon={Phone} label="Telefone" value="+55 (00) 00000-0000" href="tel:+5500000000000" />
-            <ContactItem icon={MapPin} label="Atendimento" value="Presencial e online em todo o Brasil" />
+
+          <aside className="space-y-10 md:col-span-5">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-gold">Contato Direto</p>
+              <div className="mt-8 space-y-7">
+                <ContactRow icon={Mail} label="E-mail" value="contato@ayrtonpedrosa.adv.br" href="mailto:contato@ayrtonpedrosa.adv.br" />
+                <ContactRow icon={Phone} label="Telefone" value="+55 (00) 00000-0000" href="tel:+5500000000000" />
+                <ContactRow icon={MapPin} label="Atendimento" value="Presencial e online em todo o Brasil" />
+              </div>
+            </div>
+
             <a
               href="https://www.instagram.com/ayrtonpedrosa.adv"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition-all hover:border-primary hover:shadow-[var(--shadow-card)]"
+              className="group flex items-center gap-5 border-t border-border pt-8 transition-all hover:border-gold"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="flex h-12 w-12 items-center justify-center border border-gold/60 text-gold transition-all group-hover:bg-gold group-hover:text-[var(--gold-foreground)]">
                 <Instagram className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Instagram</div>
-                <div className="font-medium text-primary">@ayrtonpedrosa.adv</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-foreground/60">Siga no Instagram</div>
+                <div className="mt-1 font-serif text-lg text-foreground group-hover:text-gold">@ayrtonpedrosa.adv</div>
               </div>
             </a>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
   );
 }
 
-function ContactItem({ icon: Icon, label, value, href }: { icon: typeof Mail; label: string; value: string; href?: string }) {
+function FormField({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <label className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-gold">{label}</label>
+      {children}
+    </div>
+  );
+}
+
+function ContactRow({ icon: Icon, label, value, href }: { icon: typeof Mail; label: string; value: string; href?: string }) {
   const Wrap: React.ElementType = href ? "a" : "div";
   return (
-    <Wrap
-      {...(href ? { href } : {})}
-      className="flex items-start gap-4 rounded-md border border-border bg-card p-5 transition-all hover:border-primary/50"
-    >
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-        <Icon className="h-5 w-5" />
-      </div>
+    <Wrap {...(href ? { href } : {})} className="group flex items-start gap-5">
+      <Icon className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
       <div>
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-        <div className="mt-0.5 font-medium text-foreground">{value}</div>
+        <div className="text-[10px] uppercase tracking-[0.3em] text-foreground/60">{label}</div>
+        <div className="mt-1 font-serif text-lg text-foreground transition-colors group-hover:text-gold">{value}</div>
       </div>
     </Wrap>
   );
