@@ -9,9 +9,11 @@ import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  loader: () => ({ year: new Date().getFullYear() }),
 });
 
 function Index() {
+  const { year } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -19,21 +21,22 @@ function Index() {
         <Hero />
         <About />
         <Areas />
-        <section id="blog" className="bg-secondary py-24 md:py-32">
+        <section id="blog" className="relative bg-background py-28 md:py-40">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <span className="text-xs uppercase tracking-[0.3em] text-primary/70">Blog</span>
-            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-primary md:text-5xl">
-              Insights sobre o Agronegócio
+            <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Blog —</p>
+            <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-foreground md:text-6xl">
+              Insights sobre o <span className="italic text-gold">agronegócio</span>.
             </h2>
-            <p className="mt-5 text-muted-foreground">
+            <div className="mx-auto mt-8 h-px w-32 gold-divider" />
+            <p className="mt-8 text-base leading-relaxed text-foreground/70 md:text-lg">
               Em breve: artigos, análises e atualizações sobre legislação agrária, ambiental e do agronegócio brasileiro.
             </p>
           </div>
         </section>
         <Contact />
       </main>
-      <Footer />
-      <Toaster richColors position="top-right" />
+      <Footer year={year} />
+      <Toaster richColors position="top-right" theme="dark" />
     </div>
   );
 }
