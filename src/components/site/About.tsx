@@ -1,19 +1,32 @@
 import portrait from "@/assets/portrait-ayrton.jpg";
+import { motion } from "framer-motion";
 
 export function About() {
   return (
     <section id="sobre" className="relative overflow-hidden bg-cream py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
+          className="mx-auto max-w-3xl text-center"
+        >
           <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— O Escritório —</p>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-6xl">
             Tradição, ética e <span className="italic text-gold">estratégia</span> a serviço do agronegócio.
           </h2>
           <div className="mx-auto mt-8 h-px w-32 gold-divider" />
-        </div>
+        </motion.div>
 
         <div className="mt-20 grid items-center gap-16 md:grid-cols-12 md:gap-20">
-          <div className="md:col-span-5">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+            className="md:col-span-5"
+          >
             <div className="relative">
               <div className="absolute -left-4 -top-4 h-full w-full border border-gold/60" />
               <img
@@ -26,12 +39,18 @@ export function About() {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white/80 to-transparent px-10 pb-10 pt-24">
                 <p className="font-serif text-3xl font-bold text-velvet">Dr. Ayrton Pedrosa</p>
-                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.5em] text-gold">Advogado · Sócio Fundador</p>
+                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.5em] text-gold">Advogado · OAB/PE 35.952</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.4 }}
+            className="md:col-span-7"
+          >
             <h3 className="font-serif text-2xl font-medium text-velvet md:text-3xl">
               Advocacia pensada para o campo.
             </h3>
@@ -47,14 +66,20 @@ export function About() {
                 { n: "+15", l: "Anos de experiência" },
                 { n: "+200", l: "Clientes atendidos" },
                 { n: "100%", l: "Foco no agronegócio" },
-              ].map((s) => (
-                <div key={s.l}>
+              ].map((s, idx) => (
+                <motion.div 
+                  key={s.l}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.6 + (idx * 0.1) }}
+                >
                   <div className="font-serif text-3xl font-semibold text-velvet md:text-5xl">{s.n}</div>
                   <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-velvet/40 md:text-xs">{s.l}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { Scale, Wheat, TreePine, Building2, ScrollText, MapPin, Gavel, Tractor, ArrowUpRight, type LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 type Area = {
   number: string;
@@ -44,7 +45,13 @@ export function Areas() {
   return (
     <section id="areas" className="relative bg-white py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 md:grid-cols-12 md:items-end">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="grid gap-12 md:grid-cols-12 md:items-end"
+        >
           <div className="md:col-span-7">
             <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Áreas de Atuação —</p>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] text-velvet md:text-6xl">
@@ -54,12 +61,16 @@ export function Areas() {
           <p className="text-base leading-relaxed text-velvet/70 md:col-span-5 md:text-lg">
             Atuação especializada e estratégica em todas as áreas que impactam o produtor rural, a cooperativa e o empresário do campo.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-20 grid gap-px bg-stone-100/50 md:grid-cols-2 lg:grid-cols-3 border border-stone-100/50">
-          {areas.map((a) => (
-            <article
+          {areas.map((a, idx) => (
+            <motion.article
               key={a.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
               className="group relative flex flex-col bg-white p-10 transition-all duration-500 hover:bg-cream"
             >
               <div className="flex items-start justify-between">
@@ -79,11 +90,17 @@ export function Areas() {
               <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 Saiba mais <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
-            </article>
+            </motion.article>
           ))}
 
           {/* CTA tile */}
-          <article className="relative flex flex-col justify-between bg-velvet p-10 text-white shadow-2xl">
+          <motion.article 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative flex flex-col justify-between bg-velvet p-10 text-white shadow-2xl"
+          >
             <div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">— Consultoria —</p>
               <h3 className="mt-8 font-serif text-2xl font-medium leading-tight md:text-3xl text-white">
@@ -96,7 +113,7 @@ export function Areas() {
             >
               Fale com o escritório <ArrowUpRight className="h-4 w-4" />
             </a>
-          </article>
+          </motion.article>
         </div>
       </div>
     </section>

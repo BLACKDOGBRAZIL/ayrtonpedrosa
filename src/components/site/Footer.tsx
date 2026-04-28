@@ -1,5 +1,6 @@
 import { Instagram, Mail, Phone } from "lucide-react";
 import footerBg from "@/assets/footeragro.jpg";
+import { motion } from "framer-motion";
 
 export function Footer({ year }: { year: number }) {
   return (
@@ -13,7 +14,13 @@ export function Footer({ year }: { year: number }) {
       {/* Dark Velvet Glass Overlay */}
       <div className="absolute inset-0 bg-velvet/55 backdrop-blur-sm" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12"
+      >
         <div className="md:col-span-5">
           <div className="font-serif text-3xl font-semibold text-white md:text-4xl">
             Ayrton <span className="italic text-gold">Pedrosa</span>
@@ -31,13 +38,13 @@ export function Footer({ year }: { year: number }) {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
                 <Mail className="h-4 w-4" />
               </div>
-              <span className="group-hover:text-white transition-colors text-base font-serif italic">contato@ayrtonpedrosa.adv.br</span>
+              <span className="group-hover:text-white transition-colors text-base font-serif italic">contato@ayrtonpedrosa.com</span>
             </li>
             <li className="flex items-center gap-4 group cursor-pointer">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
                 <Phone className="h-4 w-4" />
               </div>
-              <span className="group-hover:text-white transition-colors text-base font-serif italic">+55 (81) 00000-0000</span>
+              <a href="https://wa.me/5581997586830" target="_blank" rel="noopener noreferrer" className="group-hover:text-white transition-colors text-base font-serif italic">+55 (81) 99758-6830</a>
             </li>
           </ul>
         </div>
@@ -59,11 +66,11 @@ export function Footer({ year }: { year: number }) {
             </div>
           </a>
         </div>
-      </div>
+      </motion.div>
 
       <div className="relative border-t border-white/5">
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-[10px] uppercase tracking-[0.4em] text-white/30">
-          Ayrton Pedrosa Advocacia · {year} · Todos os Direitos Reservados
+          Ayrton Pedrosa Advocacia · OAB/PE 35.952 · {year} · Todos os Direitos Reservados
         </div>
       </div>
     </footer>

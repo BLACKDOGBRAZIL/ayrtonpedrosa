@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-agro.jpg";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
     <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden">
-      <img
+      <motion.img
+        initial={{ scale: 1.15, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 2.5, ease: "easeOut" }}
         src={heroImg}
         alt="Campos agrícolas e silos modernos ao pôr do sol"
         width={1920}
@@ -17,38 +21,67 @@ export function Hero() {
       <div className="mx-auto w-full max-w-7xl px-6 py-32 text-center">
         <div className="mx-auto max-w-4xl">
           {/* Framed logo block — Alfonsin-style */}
-          <div className="mx-auto mb-10 inline-block border border-gold/60 px-12 py-8 backdrop-blur-sm">
+          <motion.div 
+            initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
+            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+            className="mx-auto mb-10 inline-block border border-gold/60 px-12 py-8 backdrop-blur-sm"
+          >
             <h1 className="font-serif text-5xl font-semibold tracking-wide text-white md:text-7xl lg:text-8xl">
               Ayrton <span className="italic text-gold">Pedrosa</span>
             </h1>
-            <div className="mx-auto mt-3 h-px w-24 gold-divider" />
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: 96 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="mx-auto mt-3 h-px gold-divider" 
+            />
             <p className="mt-3 text-xs uppercase tracking-[0.5em] text-white/90 md:text-sm">
               Advocacia Estratégica
             </p>
-          </div>
+          </motion.div>
 
-          <p className="mx-auto mt-8 max-w-2xl font-serif text-xl italic leading-relaxed text-white/95 md:text-2xl">
+          <motion.p 
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mx-auto mt-8 max-w-2xl font-serif text-xl italic leading-relaxed text-white/95 md:text-2xl"
+          >
             Estratégia jurídica no agronegócio. Soluções legais inovadoras e personalizadas para produtores rurais, cooperativas e empresários do campo.
-          </p>
+          </motion.p>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
             <Button asChild variant="hero" size="lg">
               <a href="#contato">Agendar Consulta</a>
             </Button>
             <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-gold hover:bg-transparent text-xs uppercase tracking-[0.2em]">
               <a href="#sobre">Conheça o Escritório →</a>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/60">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/60"
+      >
         <div className="flex flex-col items-center gap-2">
           <span className="text-[10px] uppercase tracking-[0.4em] text-white/60">Scroll</span>
-          <div className="h-12 w-px bg-gradient-to-b from-gold/80 to-transparent" />
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="h-12 w-px bg-gradient-to-b from-gold/80 to-transparent" 
+          />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
