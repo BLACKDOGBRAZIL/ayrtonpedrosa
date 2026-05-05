@@ -34,10 +34,10 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className={`fixed z-50 w-full transition-all duration-500 top-8 ${
+      className={`fixed z-50 w-full transition-all duration-500 ${
         isScrolled || isMobileMenuOpen
-          ? "bg-velvet py-3 shadow-xl border-b border-white/5" 
-          : "bg-transparent py-3"
+          ? "top-0 bg-velvet py-3 shadow-xl" 
+          : "top-8 bg-transparent py-3"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">

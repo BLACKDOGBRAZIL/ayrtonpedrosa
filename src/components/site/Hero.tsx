@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-agro.jpg";
+import heroImg from "@/assets/hero_classic_law.png";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
@@ -8,11 +8,11 @@ export function Hero() {
     <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden">
       {/* Background Image with Parallax-like scale */}
       <motion.img
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         src={heroImg}
-        alt="Campos agrícolas e silos modernos ao pôr do sol"
+        alt="Interior clássico de escritório de advocacia"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
       
@@ -30,8 +30,8 @@ export function Hero() {
             className="flex items-center gap-4 mb-8"
           >
             <div className="h-px w-12 bg-gold" />
-            <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-gold font-bold">
-              Direito & Agronegócio
+            <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gold font-medium">
+              Excelência Jurídica
             </span>
           </motion.div>
 
@@ -43,16 +43,16 @@ export function Hero() {
             className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white font-medium"
           >
             <span className="whitespace-nowrap">Segurança jurídica</span> <br />
-            para o <span className="italic text-gold">futuro do campo.</span>
+            para o seu negócio.
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="mt-8 max-w-xl text-lg md:text-xl text-white/70 leading-relaxed font-light"
+            className="mt-8 max-w-xl text-lg md:text-xl text-white/80 leading-relaxed"
           >
-            Soluções jurídicas especializadas para proteger seu patrimônio e impulsionar a rentabilidade da sua operação agropecuária.
+            Soluções jurídicas especializadas para proteger seu patrimônio e garantir a tranquilidade das suas operações e negócios.
           </motion.p>
 
           <motion.div 
@@ -61,16 +61,16 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-12 flex flex-col items-center sm:flex-row gap-6"
           >
-            <Button asChild variant="hero" size="lg" className="h-16 px-10 text-sm group">
+            <Button asChild variant="hero" className="h-12 px-8 text-xs group">
               <a href="#contato" className="flex items-center gap-3">
-                Agendar Consulta Especializada
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Saiba mais
+                <ChevronRight className="h-4 w-4" />
               </a>
             </Button>
             
             <a 
               href="#sobre" 
-              className="group flex items-center gap-3 text-white/60 hover:text-white transition-all text-[11px] uppercase tracking-[0.3em] font-bold"
+              className="group flex items-center gap-3 text-white/80 hover:text-white transition-all text-[11px] uppercase tracking-[0.2em] font-medium"
             >
               Conheça o Escritório
               <div className="h-px w-8 bg-white/20 transition-all group-hover:w-12 group-hover:bg-gold" />
@@ -97,13 +97,9 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <div className="flex flex-col items-center gap-4">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">Descer</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">Descer</span>
           <div className="h-12 w-px bg-white/10 overflow-hidden">
-            <motion.div 
-              animate={{ y: [-48, 48] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="h-full w-full bg-gold"
-            />
+            <div className="h-full w-full bg-gold/50" />
           </div>
         </div>
       </motion.div>

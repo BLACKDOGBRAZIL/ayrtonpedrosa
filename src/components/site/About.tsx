@@ -12,11 +12,11 @@ export function About() {
           transition={{ duration: 1 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— O Escritório —</p>
+          <p className="text-[10px] uppercase tracking-widest text-gold">— O Escritório —</p>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-6xl">
-            Tradição, ética e <span className="italic text-gold">excelência</span> a serviço do agronegócio.
+            Tradição, ética e <span className="text-gold">excelência</span> a serviço da justiça.
           </h2>
-          <div className="mx-auto mt-8 h-px w-32 gold-divider" />
+          <div className="mx-auto mt-8 h-px w-24 bg-gold/50" />
         </motion.div>
 
         <div className="mt-20 grid items-center gap-16 md:grid-cols-12 md:gap-20">
@@ -31,15 +31,15 @@ export function About() {
               <div className="absolute -left-4 -top-4 h-full w-full border border-gold/60" />
               <img
                 src={portrait}
-                alt="Ayrton Pedrosa, advogado especialista em agronegócio"
+                alt="Ayrton Pedrosa, advogado especialista"
                 width={896}
                 height={1152}
                 loading="lazy"
-                className="relative aspect-[4/5] w-full object-cover object-top shadow-[0_30px_80px_-30px_rgba(62,39,35,0.35)]"
+                className="relative aspect-[4/5] w-full object-cover object-top shadow-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white/80 to-transparent px-10 pb-10 pt-24">
-                <p className="font-serif text-3xl font-bold text-velvet">Dr. Ayrton Pedrosa</p>
-                <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.5em] text-gold">Advogado · OAB/PE 35.952</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-white p-8 border-t border-gold/20">
+                <p className="font-serif text-2xl font-medium text-velvet">Dr. Ayrton Pedrosa</p>
+                <p className="mt-2 text-[10px] font-medium uppercase tracking-widest text-gold">Advogado · OAB/PE 35.952</p>
               </div>
             </div>
           </motion.div>
@@ -51,34 +51,25 @@ export function About() {
             transition={{ duration: 1.2, delay: 0.4 }}
             className="md:col-span-7"
           >
-            <h3 className="font-serif text-2xl font-medium text-velvet md:text-3xl">
-              Advocacia pensada para o campo.
+            <h3 className="font-serif text-2xl font-medium text-velvet md:text-4xl leading-tight">
+              Atuação Estratégica e Exclusiva.
             </h3>
-            <p className="mt-6 text-base leading-[1.9] text-velvet/80 md:text-lg">
-              Ayrton Pedrosa Advocacia atua com compromisso e visão de futuro, oferecendo soluções jurídicas pensadas para a realidade do agronegócio brasileiro. Nosso trabalho é guiar produtores, cooperativas e empresários através das complexas legislações fundiárias e ambientais.
+            <p className="mt-8 text-base leading-[2] text-velvet/80 md:text-xl font-light">
+              O escritório Ayrton Pedrosa Advocacia fundamenta sua prática na excelência técnica e na discrição absoluta. Nossa missão é prover segurança jurídica por meio de soluções sob medida, antecipando riscos e consolidando estratégias que protegem o patrimônio e os interesses de nossos clientes.
             </p>
-            <p className="mt-5 text-base leading-[1.9] text-velvet/60 md:text-lg">
-              Combinamos profundo conhecimento técnico com uma abordagem especializada e personalizada, sempre com foco no <span className="font-medium text-velvet">crescimento sustentável</span> e na <span className="font-medium text-velvet">proteção patrimonial</span> dos nossos clientes.
+            <p className="mt-6 text-base leading-[2] text-velvet/70 md:text-lg">
+              Em um cenário jurídico em constante mutação, entregamos uma advocacia consultiva e contenciosa de alta performance, onde cada caso é tratado como uma prioridade institucional, garantindo um atendimento personalizado que a complexidade do mercado moderno exige.
             </p>
 
-            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-cream pt-10">
-              {[
-                { n: "+15", l: "Anos de experiência" },
-                { n: "+200", l: "Clientes atendidos" },
-                { n: "100%", l: "Foco no agronegócio" },
-              ].map((s, idx) => (
-                <motion.div 
-                  key={s.l}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.6 + (idx * 0.1) }}
-                >
-                  <div className="font-serif text-3xl font-semibold text-velvet md:text-5xl">{s.n}</div>
-                  <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-velvet/40 md:text-xs">{s.l}</div>
-                </motion.div>
-              ))}
+            <div className="mt-16 flex flex-col gap-8 sm:flex-row sm:items-center">
+              <div className="h-px flex-1 bg-gold/20" />
+              <div className="flex flex-col">
+                <span className="font-serif text-xl italic text-gold">Ayrton Pedrosa</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-velvet/40 mt-1">Sócio Fundador</span>
+              </div>
             </div>
+
+
           </motion.div>
         </div>
       </div>

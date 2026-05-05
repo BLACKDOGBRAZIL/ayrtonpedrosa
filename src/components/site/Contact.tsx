@@ -39,12 +39,12 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Contato —</p>
+            <p className="text-[10px] uppercase tracking-widest text-gold">— Contato —</p>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-6xl">
-              Pronto para <span className="italic text-gold">proteger</span> o seu legado?
+              Pronto para <span className="text-gold">proteger</span> o seu legado?
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-velvet/70 max-w-lg">
-              Agende uma consulta especializada. Nossa equipe está pronta para oferecer a segurança jurídica que sua operação agropecuária exige.
+              Agende uma consulta especializada. Nossa equipe está pronta para oferecer a segurança jurídica que seus negócios exigem.
             </p>
 
             <div className="mt-12 space-y-10">
@@ -158,7 +158,7 @@ export function Contact() {
                   <Button 
                     type="submit" 
                     disabled={loading}
-                    className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-lg"
+                    className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-widest font-medium transition-all shadow-lg"
                   >
                     {loading ? (
                       <Loader2 className="h-5 w-5 animate-spin" />
@@ -167,7 +167,7 @@ export function Contact() {
                     )}
                   </Button>
                   <p className="text-[10px] text-center text-velvet/40 uppercase tracking-widest font-medium">
-                    Conectado ao sistema de gestão jurídica
+                    Comunicação Segura
                   </p>
                 </motion.form>
               )}
@@ -194,7 +194,7 @@ function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: an
         <Icon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.5} />
       </div>
       <div>
-        <h4 className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">{title}</h4>
+        <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium">{title}</h4>
         <Wrapper 
           href={link} 
           target={link?.startsWith("http") ? "_blank" : undefined}

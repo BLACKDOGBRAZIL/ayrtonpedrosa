@@ -17,7 +17,7 @@ export function NewsSection() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const rssUrl = "https://news.google.com/rss/search?q=agroneg%C3%B3cio+Pernambuco+OR+Nordeste&hl=pt-BR&gl=BR&ceid=BR:pt-419";
+        const rssUrl = "https://news.google.com/rss/search?q=economia+OR+direito+OR+agronegócio+Brasil&hl=pt-BR&gl=BR&ceid=BR:pt-419";
         const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
         const data = await response.json();
         if (data.status === 'ok') {
@@ -52,13 +52,13 @@ export function NewsSection() {
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Notícias —</p>
+          <p className="text-[10px] uppercase tracking-widest text-gold">— Notícias —</p>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-5xl">
-            Atualizações em <span className="italic text-gold">Tempo Real</span>.
+            Atualizações em <span className="text-gold">Tempo Real</span>.
           </h2>
           <div className="mx-auto mt-8 h-px w-32 gold-divider" />
           <p className="mt-8 text-base leading-relaxed text-velvet/60 md:text-lg max-w-2xl mx-auto">
-            Acompanhe as últimas notícias do agronegócio do Brasil e do Nordeste.
+            Acompanhe as últimas notícias de economia, direito e agronegócio.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export function NewsSection() {
                   {/* Background Image with Overlay */}
                   <div className="absolute inset-0 z-0">
                     <img 
-                      src={`/images/news_${(i % 3) + 1}.png`} 
+                      src={`/images/news_cover_${(i % 3) + 1}.png`} 
                       alt="" 
                       className="w-full h-full object-cover opacity-80 blur-[1px] saturate-[0.7] group-hover:scale-110 group-hover:blur-0 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700" 
                     />

@@ -30,13 +30,13 @@ const areas: Area[] = [
   {
     number: "04",
     title: "Inventários & Herança",
-    description: "Planejamento sucessório, inventários e proteção patrimonial para famílias do agronegócio.",
+    description: "Planejamento sucessório, inventários e proteção patrimonial para famílias e empresas.",
     icons: [ScrollText],
   },
   {
     number: "05",
     title: "Regularização, Multas & Cooperativas",
-    description: "Regularização fundiária, defesa administrativa e suporte jurídico especializado a cooperativas.",
+    description: "Regularização fundiária, defesa administrativa, contencioso cível e suporte empresarial.",
     icons: [MapPin, Gavel, Tractor],
   },
 ];
@@ -53,13 +53,13 @@ export function Areas() {
           className="grid gap-12 md:grid-cols-12 md:items-end"
         >
           <div className="md:col-span-7">
-            <p className="text-[10px] uppercase tracking-[0.5em] text-gold">— Áreas de Atuação —</p>
+            <p className="text-[10px] uppercase tracking-widest text-gold">— Áreas de Atuação —</p>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] text-velvet md:text-6xl">
-              Expertise jurídica em <span className="italic text-gold">cada frente</span> do agronegócio.
+              Expertise jurídica em <span className="text-gold">diversas frentes</span> de atuação.
             </h2>
           </div>
           <p className="text-base leading-relaxed text-velvet/70 md:col-span-5 md:text-lg">
-            Atuação técnica e especializada em todas as áreas que impactam o produtor rural, a cooperativa e o empresário do campo.
+            Atuação técnica e especializada nas áreas cruciais para o seu negócio e patrimônio.
           </p>
         </motion.div>
 
@@ -87,7 +87,7 @@ export function Areas() {
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-velvet/60">{a.description}</p>
 
-              <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 Saiba mais <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
             </motion.article>
@@ -102,14 +102,14 @@ export function Areas() {
             className="relative flex flex-col justify-between bg-velvet p-10 text-white shadow-2xl"
           >
             <div>
-              <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">— Consultoria —</p>
+              <p className="text-[10px] uppercase tracking-widest text-gold/80">— Consultoria —</p>
               <h3 className="mt-8 font-serif text-2xl font-medium leading-tight md:text-3xl text-white">
-                Cada caso merece uma <span className="italic text-gold">solução</span> única.
+                Cada caso merece uma <span className="text-gold">solução</span> única.
               </h3>
             </div>
             <a
               href="#contato"
-              className="mt-10 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.3em] text-gold hover:text-white transition-all"
+              className="mt-10 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-gold hover:text-white transition-all"
             >
               Fale com o escritório <ArrowUpRight className="h-4 w-4" />
             </a>

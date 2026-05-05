@@ -8,7 +8,7 @@ export function Footer({ year }: { year: number }) {
       {/* Background Image */}
       <img
         src={footerBg}
-        alt="Agro Background"
+        alt="Legal Background"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
       {/* Dark Velvet Glass Overlay */}
@@ -25,14 +25,14 @@ export function Footer({ year }: { year: number }) {
           <div className="font-serif text-3xl font-semibold text-white md:text-4xl">
             Ayrton <span className="italic text-gold">Pedrosa</span>
           </div>
-          <p className="mt-3 text-[11px] uppercase tracking-[0.5em] text-gold">Advocacia</p>
+          <p className="mt-3 text-[11px] uppercase tracking-widest text-gold">Advocacia</p>
           <p className="mt-8 max-w-sm text-base leading-relaxed text-white/60 font-light">
-            Estratégia jurídica especializada para produtores rurais, cooperativas e empresários do agronegócio brasileiro.
+            Estratégia jurídica especializada para empresas e pessoas que buscam segurança, inovação e resultados.
           </p>
         </div>
 
         <div className="md:col-span-4">
-          <h4 className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-8">Contato Direto</h4>
+          <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium mb-8">Contato Direto</h4>
           <ul className="space-y-6 text-sm text-white/80">
             <li className="flex items-center gap-4 group cursor-pointer">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
@@ -50,7 +50,7 @@ export function Footer({ year }: { year: number }) {
         </div>
 
         <div className="md:col-span-3">
-          <h4 className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-8">Presença Digital</h4>
+          <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium mb-8">Presença Digital</h4>
           <a
             href="https://www.instagram.com/ayrtonpedrosa.adv"
             target="_blank"
@@ -61,7 +61,7 @@ export function Footer({ year }: { year: number }) {
               <Instagram className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">Instagram</p>
+              <p className="text-[10px] uppercase tracking-widest text-white/40">Instagram</p>
               <p className="text-lg font-serif text-white group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
             </div>
           </a>
@@ -69,7 +69,7 @@ export function Footer({ year }: { year: number }) {
       </motion.div>
 
       <div className="relative border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-[10px] uppercase tracking-[0.4em] text-white/30">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-[10px] uppercase tracking-widest text-white/30">
           Ayrton Pedrosa Advocacia · OAB/PE 35.952 · {year} · Todos os Direitos Reservados
         </div>
       </div>
