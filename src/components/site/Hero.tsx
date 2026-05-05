@@ -98,8 +98,12 @@ export function Hero() {
       >
         <div className="flex flex-col items-center gap-4">
           <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">Descer</span>
-          <div className="h-12 w-px bg-white/10 overflow-hidden">
-            <div className="h-full w-full bg-gold/50" />
+          <div className="h-10 w-px bg-gold/30 relative overflow-hidden">
+            <motion.div 
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 left-0 w-full h-full bg-gold"
+            />
           </div>
         </div>
       </motion.div>

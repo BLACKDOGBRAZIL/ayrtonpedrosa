@@ -1,5 +1,5 @@
 import { Instagram, Mail, Phone } from "lucide-react";
-import footerBg from "@/assets/footeragro.jpg";
+import footerBg from "@/assets/footer_classic_law.png";
 import { motion } from "framer-motion";
 
 export function Footer({ year }: { year: number }) {
@@ -11,8 +11,9 @@ export function Footer({ year }: { year: number }) {
         alt="Legal Background"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
-      {/* Dark Velvet Glass Overlay */}
-      <div className="absolute inset-0 bg-velvet/55 backdrop-blur-sm" />
+      {/* Dark Overlay with sophisticated gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-velvet/80 via-velvet/95 to-velvet" />
+      <div className="absolute inset-0 bg-black/40" />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}

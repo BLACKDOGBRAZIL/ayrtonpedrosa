@@ -87,7 +87,7 @@ export function InstagramFeed() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative aspect-square overflow-hidden rounded-xl bg-stone-200 shadow-lg"
+                className="group relative aspect-square overflow-hidden bg-stone-200 shadow-lg border border-gold/10"
               >
                 <img
                   src={post.mediaUrl}
@@ -120,7 +120,7 @@ export function InstagramFeed() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 bg-velvet text-white px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold shadow-xl hover:bg-gold hover:text-velvet transition-all duration-300 border border-white/5"
+            className="inline-flex items-center gap-3 bg-velvet text-white px-8 py-3 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold shadow-xl hover:bg-gold hover:text-velvet transition-all duration-300 border border-white/5"
           >
             Seguir Perfil Oficial
           </motion.a>

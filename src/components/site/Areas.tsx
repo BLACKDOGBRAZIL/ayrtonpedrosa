@@ -12,32 +12,32 @@ const areas: Area[] = [
   {
     number: "01",
     title: "Agrário & Agronegócio",
-    description: "Gestão e regularização de propriedades rurais, contratos agrários e estruturação de operações no campo.",
-    icons: [Scale, Wheat],
+    description: "Gestão estratégica e regularização de propriedades rurais, contratos complexos e estruturação de operações no campo.",
+    icons: [Wheat],
   },
   {
     number: "02",
-    title: "Ambiental",
-    description: "Consultoria e defesa em licenças ambientais, autuações, multas e adequação à legislação vigente.",
+    title: "Direito Ambiental",
+    description: "Consultoria preventiva e defesa especializada em licenciamentos, autuações e adequação à legislação vigente.",
     icons: [TreePine],
   },
   {
     number: "03",
-    title: "Imobiliário",
-    description: "Assessoria completa em transações imobiliárias rurais e urbanas, due diligence e regularização registral.",
+    title: "Negócios Imobiliários",
+    description: "Assessoria em transações de alto valor, due diligence rigorosa e regularização de ativos imobiliários.",
     icons: [Building2],
   },
   {
     number: "04",
-    title: "Inventários & Herança",
-    description: "Planejamento sucessório, inventários e proteção patrimonial para famílias e empresas.",
+    title: "Sucessões & Patrimônio",
+    description: "Planejamento sucessório sofisticado, inventários e blindagem patrimonial para famílias e holdings.",
     icons: [ScrollText],
   },
   {
     number: "05",
-    title: "Regularização, Multas & Cooperativas",
-    description: "Regularização fundiária, defesa administrativa, contencioso cível e suporte empresarial.",
-    icons: [MapPin, Gavel, Tractor],
+    title: "Estratégia Empresarial",
+    description: "Regularização fundiária, compliance administrativo, contencioso cível e suporte jurídico corporativo.",
+    icons: [Gavel],
   },
 ];
 
@@ -64,23 +64,23 @@ export function Areas() {
         </motion.div>
 
         <div className="mt-20 grid gap-px bg-stone-100/50 md:grid-cols-2 lg:grid-cols-3 border border-stone-100/50">
-          {areas.map((a, idx) => (
-            <motion.article
-              key={a.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className="group relative flex flex-col bg-white p-10 transition-all duration-500 hover:bg-cream"
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  {a.icons.map((Icon, i) => (
-                    <Icon key={i} className="h-8 w-8 text-gold transition-transform duration-500 group-hover:-translate-y-1" strokeWidth={1.4} />
-                  ))}
+          {areas.map((a, idx) => {
+            const Icon = a.icons[0];
+            return (
+              <motion.article
+                key={a.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: idx * 0.1 }}
+                className="group relative flex flex-col bg-white p-10 transition-all duration-500 hover:bg-cream"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="font-serif text-sm text-stone-300">{a.number}</span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/10 text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-velvet">
+                    {Icon && <Icon className="h-5 w-5" strokeWidth={1.2} />}
+                  </div>
                 </div>
-                <span className="font-serif text-sm text-stone-300">{a.number}</span>
-              </div>
 
               <h3 className="mt-10 font-serif text-2xl font-medium leading-tight text-velvet md:text-3xl">
                 {a.title}
@@ -90,8 +90,9 @@ export function Areas() {
               <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-widest text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 Saiba mais <ArrowUpRight className="h-3.5 w-3.5" />
               </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            );
+          })}
 
           {/* CTA tile */}
           <motion.article 

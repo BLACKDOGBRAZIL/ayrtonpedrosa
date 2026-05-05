@@ -190,15 +190,15 @@ function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: an
       transition={{ duration: 0.6, delay }}
       className="flex items-start gap-4 md:gap-6"
     >
-      <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-xl bg-velvet text-gold shadow-xl border border-white/5">
-        <Icon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.5} />
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center text-gold">
+        <Icon className="h-6 w-6" strokeWidth={1} />
       </div>
       <div>
         <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium">{title}</h4>
         <Wrapper 
           href={link} 
           target={link?.startsWith("http") ? "_blank" : undefined}
-          className={`mt-1 md:mt-2 block font-serif text-lg md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors underline decoration-gold/20 underline-offset-8' : ''}`}
+          className={`mt-1 block font-serif text-xl md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors' : ''}`}
         >
           {content}
         </Wrapper>

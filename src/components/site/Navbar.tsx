@@ -36,7 +36,7 @@ export function Navbar() {
       transition={{ duration: 1, ease: "easeOut" }}
       className={`fixed z-50 w-full transition-all duration-500 ${
         isScrolled || isMobileMenuOpen
-          ? "top-0 bg-velvet py-3 shadow-xl" 
+          ? "top-0 bg-velvet/90 backdrop-blur-md py-3 shadow-xl" 
           : "top-8 bg-transparent py-3"
       }`}
     >
