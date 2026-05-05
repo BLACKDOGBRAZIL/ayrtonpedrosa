@@ -40,9 +40,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white font-medium"
+            className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white font-medium"
           >
-            <span className="whitespace-nowrap">Segurança jurídica</span> <br />
+            Segurança jurídica <br />
             para o seu negócio.
           </motion.h1>
 
