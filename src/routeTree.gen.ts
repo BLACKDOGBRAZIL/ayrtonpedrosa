@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as DashboardClientsRouteImport } from './routes/dashboard/clients'
@@ -25,6 +26,11 @@ const LoginRoute = LoginRouteImport.update({
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
+  id: '/areas-de-atuacao',
+  path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -55,6 +61,7 @@ const DashboardAgendaRoute = DashboardAgendaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/dashboard': typeof DashboardRouteWithChildren
   '/login': typeof LoginRoute
   '/dashboard/agenda': typeof DashboardAgendaRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/login': typeof LoginRoute
   '/dashboard/agenda': typeof DashboardAgendaRoute
   '/dashboard/cases': typeof DashboardCasesRoute
@@ -73,6 +81,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/dashboard': typeof DashboardRouteWithChildren
   '/login': typeof LoginRoute
   '/dashboard/agenda': typeof DashboardAgendaRoute
@@ -84,6 +93,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/areas-de-atuacao'
     | '/dashboard'
     | '/login'
     | '/dashboard/agenda'
@@ -93,6 +103,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/areas-de-atuacao'
     | '/login'
     | '/dashboard/agenda'
     | '/dashboard/cases'
@@ -101,6 +112,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/areas-de-atuacao'
     | '/dashboard'
     | '/login'
     | '/dashboard/agenda'
@@ -111,6 +123,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DashboardRoute: typeof DashboardRouteWithChildren
   LoginRoute: typeof LoginRoute
 }
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas-de-atuacao': {
+      id: '/areas-de-atuacao'
+      path: '/areas-de-atuacao'
+      fullPath: '/areas-de-atuacao'
+      preLoaderRoute: typeof AreasDeAtuacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -189,6 +209,7 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DashboardRoute: DashboardRouteWithChildren,
   LoginRoute: LoginRoute,
 }

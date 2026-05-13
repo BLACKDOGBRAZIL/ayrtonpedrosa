@@ -76,38 +76,40 @@ export function NewsSection() {
                 rel="noopener noreferrer" 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -10 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.15 }}
                 className="group block h-full"
               >
-                <Card className="h-full relative border-none hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden min-h-[400px]">
+                <Card className="h-full relative border-none shadow-xl hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 flex flex-col overflow-hidden min-h-[420px]">
                   {/* Background Image with Overlay */}
                   <div className="absolute inset-0 z-0">
                     <img 
                       src={`/images/news_cover_${(i % 3) + 1}.png`} 
                       alt="" 
-                      className="w-full h-full object-cover opacity-80 blur-[1px] saturate-[0.7] group-hover:scale-110 group-hover:blur-0 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700" 
+                      loading="lazy"
+                      className="w-full h-full object-cover opacity-80 blur-[0.5px] saturate-[0.8] group-hover:scale-110 group-hover:blur-0 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-velvet via-velvet/60 to-transparent transition-opacity group-hover:opacity-90 duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-velvet via-velvet/40 to-transparent transition-opacity group-hover:opacity-100 duration-500" />
                   </div>
 
                   <CardHeader className="relative z-10 flex-1 justify-end pt-20">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-[10px] text-gold uppercase tracking-[0.2em] font-bold bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">
+                      <div className="text-[10px] text-gold uppercase tracking-[0.2em] font-bold bg-white/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
                         {new Date(item.pubDate).toLocaleDateString('pt-BR')}
                       </div>
                       {(item as any).source && (
-                        <div className="text-[10px] text-white/60 uppercase tracking-wider font-bold">
+                        <div className="text-[10px] text-white/60 uppercase tracking-wider font-bold drop-shadow-sm">
                           {(item as any).source}
                         </div>
                       )}
                     </div>
-                    <CardTitle className="font-serif text-2xl text-white group-hover:text-gold transition-colors line-clamp-3 leading-tight mb-4">
+                    <CardTitle className="font-serif text-2xl text-white group-hover:text-gold transition-colors line-clamp-3 leading-tight mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                       {item.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="relative z-10 pb-8 pt-0">
-                    <CardDescription className="line-clamp-3 text-white/70 text-xs font-medium leading-relaxed mb-6">
+                  <CardContent className="relative z-10 pb-10 pt-0">
+                    <CardDescription className="line-clamp-3 text-white/80 text-xs font-medium leading-relaxed mb-6 drop-shadow-sm">
                       {item.description.replace(/<[^>]+>/g, '')}
                     </CardDescription>
                     <div className="flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-widest group-hover:gap-4 transition-all">

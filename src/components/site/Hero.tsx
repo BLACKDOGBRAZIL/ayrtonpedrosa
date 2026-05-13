@@ -15,7 +15,7 @@ export function Hero() {
         alt="Interior clássico de escritório de advocacia"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
-      
+
       {/* Sophisticated Overlays */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-velvet via-velvet/80 to-transparent md:from-velvet md:via-velvet/40" />
       <div className="absolute inset-0 -z-10 bg-black/20" />
@@ -36,7 +36,7 @@ export function Hero() {
           </motion.div>
 
           {/* New Impactful Headline */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -46,7 +46,7 @@ export function Hero() {
             para o seu negócio.
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -55,7 +55,7 @@ export function Hero() {
             Soluções jurídicas especializadas para proteger seu patrimônio e garantir a tranquilidade das suas operações e negócios.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -67,9 +67,9 @@ export function Hero() {
                 <ChevronRight className="h-4 w-4" />
               </a>
             </Button>
-            
-            <a 
-              href="#sobre" 
+
+            <a
+              href="#sobre"
               className="group flex items-center gap-3 text-white/80 hover:text-white transition-all text-[11px] uppercase tracking-[0.2em] font-medium"
             >
               Conheça o Escritório
@@ -81,7 +81,7 @@ export function Hero() {
 
       {/* Decorative vertical line */}
       <div className="absolute right-12 bottom-0 hidden lg:block">
-        <motion.div 
+        <motion.div
           initial={{ height: 0 }}
           animate={{ height: "30vh" }}
           transition={{ duration: 1.5, delay: 1 }}
@@ -90,7 +90,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator - refined */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
@@ -99,7 +99,7 @@ export function Hero() {
         <div className="flex flex-col items-center gap-4">
           <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">Descer</span>
           <div className="h-10 w-px bg-gold/30 relative overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ y: ["-100%", "100%"] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               className="absolute top-0 left-0 w-full h-full bg-gold"

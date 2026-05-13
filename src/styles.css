@@ -64,8 +64,8 @@
   --primary-foreground: oklch(0.97 0.01 70);
   --primary-glow: oklch(0.36 0.05 40);
 
-  /* Gold accent (Alfonsin-style amber) */
-  --gold: oklch(0.78 0.13 75);
+  /* Gold accent (Antique Gold / Bronze) */
+  --gold: oklch(0.68 0.11 75);
   --gold-foreground: oklch(0.18 0.02 40);
 
   --secondary: oklch(0.24 0.018 40);

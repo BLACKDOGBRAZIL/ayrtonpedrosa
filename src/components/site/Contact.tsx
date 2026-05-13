@@ -87,7 +87,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Siga no Instagram</p>
-                  <p className="font-serif text-xl text-velvet group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
+                  <p className="font-sans text-xl text-velvet group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
                 </div>
               </a>
             </motion.div>
@@ -128,37 +128,38 @@ export function Contact() {
               ) : (
                 <motion.form 
                   key="form"
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   onSubmit={handleSubmit} 
-                  className="space-y-6 rounded-2xl bg-cream p-8 md:p-10 shadow-2xl"
+                  className="space-y-6 rounded-2xl bg-cream p-8 md:p-10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.2)] border border-stone-200/50"
                 >
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Nome Completo</label>
-                      <Input placeholder="Seu nome" className="bg-white border-stone-200 focus:border-gold h-12" required />
+                      <Input placeholder="Seu nome" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest text-gold font-bold">WhatsApp</label>
-                      <Input placeholder="(00) 00000-0000" className="bg-white border-stone-200 focus:border-gold h-12" required />
+                      <Input placeholder="(00) 00000-0000" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Assunto</label>
-                    <Input placeholder="Ex: Regularização Fundiária" className="bg-white border-stone-200 focus:border-gold h-12" required />
+                    <Input placeholder="Ex: Regularização Fundiária" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Mensagem</label>
                     <Textarea 
                       placeholder="Como podemos ajudar?" 
-                      className="min-h-[120px] bg-white border-stone-200 focus:border-gold resize-none p-4" 
+                      className="min-h-[120px] bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 resize-none p-4 transition-all" 
                       required
                     />
                   </div>
                   <Button 
                     type="submit" 
                     disabled={loading}
-                    className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-widest font-medium transition-all shadow-lg"
+                    className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-widest font-medium transition-all shadow-lg active:shadow-inner"
                   >
                     {loading ? (
                       <Loader2 className="h-5 w-5 animate-spin" />
@@ -167,7 +168,7 @@ export function Contact() {
                     )}
                   </Button>
                   <p className="text-[10px] text-center text-velvet/40 uppercase tracking-widest font-medium">
-                    Comunicação Segura
+                    Comunicação Segura · Protocolo SSL
                   </p>
                 </motion.form>
               )}
@@ -198,7 +199,7 @@ function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: an
         <Wrapper 
           href={link} 
           target={link?.startsWith("http") ? "_blank" : undefined}
-          className={`mt-1 block font-serif text-xl md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors' : ''}`}
+          className={`mt-1 block font-sans text-xl md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors' : ''}`}
         >
           {content}
         </Wrapper>

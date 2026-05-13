@@ -9,6 +9,7 @@ export function Footer({ year }: { year: number }) {
       <img
         src={footerBg}
         alt="Legal Background"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
       {/* Dark Overlay with sophisticated gradient */}
@@ -34,20 +35,46 @@ export function Footer({ year }: { year: number }) {
 
         <div className="md:col-span-4">
           <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium mb-8">Contato Direto</h4>
-          <ul className="space-y-6 text-sm text-white/80">
-            <li className="flex items-center gap-4 group cursor-pointer">
+          <motion.ul 
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+            className="space-y-6 text-sm text-white/80"
+          >
+            <motion.li 
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                show: { opacity: 1, x: 0 }
+              }}
+              className="flex items-center gap-4 group cursor-pointer"
+            >
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
                 <Mail className="h-4 w-4" />
               </div>
-              <span className="group-hover:text-white transition-colors text-base font-serif italic break-words leading-tight">contato@ayrtonpedrosa.com</span>
-            </li>
-            <li className="flex items-center gap-4 group cursor-pointer">
+              <span className="group-hover:text-white transition-colors text-base font-sans break-words leading-tight">contato@ayrtonpedrosa.com</span>
+            </motion.li>
+            <motion.li 
+              variants={{
+                hidden: { opacity: 0, x: -10 },
+                show: { opacity: 1, x: 0 }
+              }}
+              className="flex items-center gap-4 group cursor-pointer"
+            >
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-velvet">
                 <Phone className="h-4 w-4" />
               </div>
-              <a href="https://wa.me/5581997586830" target="_blank" rel="noopener noreferrer" className="group-hover:text-white transition-colors text-base font-serif italic">+55 (81) 99758-6830</a>
-            </li>
-          </ul>
+              <a href="https://wa.me/5581997586830" target="_blank" rel="noopener noreferrer" className="group-hover:text-white transition-colors text-base font-sans">+55 (81) 99758-6830</a>
+            </motion.li>
+          </motion.ul>
         </div>
 
         <div className="md:col-span-3">
@@ -63,7 +90,7 @@ export function Footer({ year }: { year: number }) {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/40">Instagram</p>
-              <p className="text-lg font-serif text-white group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
+              <p className="text-lg font-sans text-white group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
             </div>
           </a>
         </div>
