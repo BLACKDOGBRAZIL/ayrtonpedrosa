@@ -35,16 +35,16 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
       className={`fixed z-50 w-full transition-all duration-500 ${isScrolled || isMobileMenuOpen
-          ? "top-0 bg-velvet/90 backdrop-blur-md py-3 shadow-xl"
-          : "top-0 bg-transparent py-5"
+        ? "top-0 bg-velvet/90 backdrop-blur-md py-3 shadow-xl"
+        : "top-0 bg-transparent py-5"
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex flex-col group items-center text-center">
+        <Link to="/" className="flex flex-col group items-start md:items-center md:text-center" onClick={() => setIsMobileMenuOpen(false)}>
           <span className="font-serif text-xl font-bold tracking-widest text-white md:text-2xl transition-colors group-hover:text-gold leading-none">
             Ayrton <span className="italic text-gold group-hover:text-white">Pedrosa</span>
           </span>
-          <span className="text-[9px] uppercase tracking-[0.5em] text-white/50 mt-1.5">ADVOCACIA</span>
+          <span className="text-[9px] uppercase tracking-[0.5em] text-white/50 mt-1.5 md:ml-0">ADVOCACIA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -123,28 +123,32 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-white/10 bg-velvet px-6 py-8 md:hidden shadow-2xl overflow-hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="border-t border-white/10 bg-velvet md:hidden shadow-2xl overflow-hidden"
           >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  hash={link.hash}
-                  className="flex items-center justify-between border-b border-white/5 pb-4 text-[13px] font-bold uppercase tracking-[0.2em] text-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                  <ChevronRight className="h-4 w-4 text-gold" />
-                </Link>
-              ))}
+            <div className="mx-auto max-w-7xl px-6 py-10 flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.to}
+                    hash={link.hash}
+                    className="flex items-center justify-between border-b border-white/5 pb-5 text-[14px] font-bold uppercase tracking-[0.2em] text-white/90 active:text-gold transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                    <ChevronRight className="h-4 w-4 text-gold/50" />
+                  </Link>
+                ))}
+              </div>
 
-
-              <div className="pt-4 space-y-4">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Fale Conosco</p>
-                <Link to="/" hash="contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Agendar Reunião</Link>
-                <Link to="/" hash="contato" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Contato</Link>
-                <a href="mailto:rh@ayrtonpedrosa.com" className="block text-white font-serif text-lg" onClick={() => setIsMobileMenuOpen(false)}>Trabalhe Conosco</a>
+              <div className="mt-4 pt-8 border-t border-white/10 space-y-6">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold opacity-70">Fale Conosco</p>
+                <div className="grid gap-6">
+                  <Link to="/" hash="contato" className="text-white font-serif text-xl" onClick={() => setIsMobileMenuOpen(false)}>Agendar Reunião</Link>
+                  <Link to="/" hash="contato" className="text-white font-serif text-xl" onClick={() => setIsMobileMenuOpen(false)}>Contato</Link>
+                  <a href="mailto:rh@ayrtonpedrosa.com" className="text-white font-serif text-xl" onClick={() => setIsMobileMenuOpen(false)}>Trabalhe Conosco</a>
+                </div>
               </div>
             </div>
           </motion.div>
