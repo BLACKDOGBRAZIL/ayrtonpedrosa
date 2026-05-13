@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Calendar as CalendarIcon, 
-  ChevronLeft, 
-  ChevronRight, 
-  Plus, 
+import {
+  Calendar as CalendarIcon,
+  ChevronLeft,
+  ChevronRight,
+  Plus,
   MoreVertical,
   Clock,
   MapPin,
@@ -49,9 +49,9 @@ function DashboardAgenda() {
           <p className="text-stone-500 text-[10px] sm:text-[11px] md:text-sm mt-1 uppercase tracking-wider font-medium opacity-70">Sincronização centralizada</p>
         </div>
         <div className="flex flex-col sm:flex-row items-center gap-2 w-full md:w-auto">
-          <Button 
+          <Button
             onClick={syncCalendars}
-            variant="outline" 
+            variant="outline"
             className="w-full sm:w-auto border-stone-200 text-stone-600 rounded-lg px-3 h-10 flex items-center justify-center gap-2 uppercase tracking-[0.15em] text-[8px] sm:text-[9px] font-black hover:bg-stone-50 shrink-0"
           >
             <RefreshCw className={`h-3 w-3 ${isSyncing ? 'animate-spin' : ''}`} />
@@ -96,10 +96,10 @@ function DashboardAgenda() {
                 </div>
                 <div className="grid grid-cols-7 grid-rows-5 min-h-[400px] md:h-[600px]">
                   {Array.from({ length: 35 }).map((_, i) => {
-                    const day = i - 2 
+                    const day = i - 2
                     const isToday = day === 24
                     const hasEvent = [25, 26, 28].includes(day)
-                    
+
                     return (
                       <div key={i} className={`border-r border-b border-stone-50 p-1.5 md:p-3 group hover:bg-stone-50/50 transition-colors cursor-pointer relative ${i % 7 === 6 ? 'border-r-0' : ''}`}>
                         <div className="flex flex-col h-full">
@@ -154,7 +154,7 @@ function DashboardAgenda() {
             <div className="relative z-10">
               <h3 className="font-serif text-2xl mb-2">Sincronizar <span className="italic text-gold">Calendários</span></h3>
               <p className="text-white/60 text-[10px] uppercase tracking-widest font-bold mb-8">Centralize sua agenda externa</p>
-              
+
               <div className="space-y-4">
                 {integrations.map((app) => (
                   <div key={app.name} className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer group">

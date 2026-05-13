@@ -5,7 +5,7 @@ export function About() {
   return (
     <section id="sobre" className="relative overflow-hidden bg-cream py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -14,13 +14,13 @@ export function About() {
         >
           <p className="text-[10px] uppercase tracking-widest text-gold">— O Escritório —</p>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.1] text-velvet md:text-6xl">
-            Tradição, ética e <span className="text-gold">excelência</span> a serviço da justiça.
+            Advocacia <span className="text-gold">sob medida</span> para <span className="text-gold">decisões complexas</span>.
           </h2>
           <div className="mx-auto mt-8 h-px w-24 bg-gold/50" />
         </motion.div>
 
         <div className="mt-20 grid items-center gap-16 md:grid-cols-12 md:gap-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -44,7 +44,7 @@ export function About() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -55,10 +55,10 @@ export function About() {
               Atuação Estratégica e Exclusiva.
             </h3>
             <p className="mt-8 text-base leading-[2] text-velvet/80 md:text-xl font-light">
-              O escritório Ayrton Pedrosa Advocacia fundamenta sua prática na excelência técnica e na discrição absoluta. Nossa missão é prover segurança jurídica por meio de soluções sob medida, antecipando riscos e consolidando estratégias que protegem o patrimônio e os interesses de nossos clientes.
+              O escritório Ayrton Pedrosa Advocacia fundamenta sua prática no rigor técnico e na discrição absoluta. Nossa missão é prover segurança jurídica por meio da antecipação de riscos, consolidando estratégias robustas que protegem o patrimônio e viabilizam os negócios de nossos clientes.
             </p>
             <p className="mt-6 text-base leading-[2] text-velvet/70 md:text-lg">
-              Em um cenário jurídico em constante mutação, entregamos uma advocacia consultiva e contenciosa de alta performance, onde cada caso é tratado como uma prioridade institucional, garantindo um atendimento personalizado que a complexidade do mercado moderno exige.
+              Em um cenário corporativo dinâmico, entregamos uma advocacia consultiva e contenciosa de alta performance. Tratamos cada caso com profunda dedicação institucional, garantindo a agilidade e o direcionamento preciso que a complexidade do mercado moderno exige.
             </p>
 
             <div className="mt-16 flex flex-col gap-8 sm:flex-row sm:items-center">

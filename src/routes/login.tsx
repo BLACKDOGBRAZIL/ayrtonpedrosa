@@ -29,7 +29,7 @@ function LoginPage() {
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-green-900/10 rounded-full blur-[100px]" />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -49,8 +49,8 @@ function LoginPage() {
               <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">E-mail Profissional</Label>
               <div className="relative">
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-600" />
-                <Input 
-                  type="email" 
+                <Input
+                  type="email"
                   placeholder="exemplo@adv.br"
                   className="bg-white/5 border-white/10 h-14 pl-12 text-white focus:bg-white/10 focus:border-gold/50 transition-all rounded-xl"
                   value={email}
@@ -64,8 +64,8 @@ function LoginPage() {
               <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Senha</Label>
               <div className="relative">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-600" />
-                <Input 
-                  type="password" 
+                <Input
+                  type="password"
                   placeholder="••••••••"
                   className="bg-white/5 border-white/10 h-14 pl-12 text-white focus:bg-white/10 focus:border-gold/50 transition-all rounded-xl"
                   value={password}
@@ -83,7 +83,7 @@ function LoginPage() {
               <button type="button" className="text-xs text-gold/80 hover:text-gold transition-colors">Esqueceu a senha?</button>
             </div>
 
-            <Button 
+            <Button
               type="submit"
               className="w-full h-14 bg-gold hover:bg-white text-velvet font-bold uppercase tracking-[0.2em] text-xs rounded-xl shadow-lg shadow-gold/10 transition-all group"
             >

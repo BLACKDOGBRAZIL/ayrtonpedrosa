@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero_classic_law.png";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -40,10 +41,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white font-medium"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white font-medium tracking-tight"
           >
-            Segurança jurídica <br />
-            para o seu negócio.
+            Estratégia e segurança <br />
+            para o seu <span className="italic text-gold/90">patrimônio</span>.
           </motion.h1>
 
           <motion.p
@@ -52,7 +53,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="mt-8 max-w-xl text-lg md:text-xl text-white/80 leading-relaxed"
           >
-            Soluções jurídicas especializadas para proteger seu patrimônio e garantir a tranquilidade das suas operações e negócios.
+            Assessoria jurídica sob medida para pessoas físicas e empresas que exigem sofisticação e segurança.
           </motion.p>
 
           <motion.div
@@ -68,13 +69,13 @@ export function Hero() {
               </a>
             </Button>
 
-            <a
-              href="#sobre"
+            <Link
+              to="/areas-de-atuacao"
               className="group flex items-center gap-3 text-white/80 hover:text-white transition-all text-[11px] uppercase tracking-[0.2em] font-medium"
             >
-              Conheça o Escritório
+              VER ÁREAS DE ATUAÇÃO
               <div className="h-px w-8 bg-white/20 transition-all group-hover:w-12 group-hover:bg-gold" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

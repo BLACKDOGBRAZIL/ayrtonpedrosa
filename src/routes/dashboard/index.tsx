@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { 
-  Users, 
-  FileText, 
-  Clock, 
-  TrendingUp, 
+import {
+  Users,
+  FileText,
+  Clock,
+  TrendingUp,
   Plus,
   PlusCircle,
   ChevronRight,
@@ -50,7 +50,7 @@ function DashboardOverview() {
         {stats.map((stat, idx) => {
           const Icon = stat.icon
           return (
-            <motion.div 
+            <motion.div
               key={stat.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

@@ -16,7 +16,7 @@ export function Footer({ year }: { year: number }) {
       <div className="absolute inset-0 bg-gradient-to-b from-velvet/80 via-velvet/95 to-velvet" />
       <div className="absolute inset-0 bg-black/40" />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -35,7 +35,7 @@ export function Footer({ year }: { year: number }) {
 
         <div className="md:col-span-4">
           <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium mb-8">Contato Direto</h4>
-          <motion.ul 
+          <motion.ul
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export function Footer({ year }: { year: number }) {
             }}
             className="space-y-6 text-sm text-white/80"
           >
-            <motion.li 
+            <motion.li
               variants={{
                 hidden: { opacity: 0, x: -10 },
                 show: { opacity: 1, x: 0 }
@@ -62,7 +62,7 @@ export function Footer({ year }: { year: number }) {
               </div>
               <span className="group-hover:text-white transition-colors text-base font-sans break-words leading-tight">contato@ayrtonpedrosa.com</span>
             </motion.li>
-            <motion.li 
+            <motion.li
               variants={{
                 hidden: { opacity: 0, x: -10 },
                 show: { opacity: 1, x: 0 }

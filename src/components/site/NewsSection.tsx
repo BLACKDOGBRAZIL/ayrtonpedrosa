@@ -38,14 +38,14 @@ export function NewsSection() {
         setLoading(false);
       }
     };
-    
+
     fetchNews();
   }, []);
 
   return (
     <section id="blog" className="relative bg-cream py-28 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -63,17 +63,23 @@ export function NewsSection() {
         </motion.div>
 
         {loading ? (
-          <div className="flex justify-center py-12">
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold border-t-transparent"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="h-[420px] rounded-none bg-velvet/5 animate-pulse border border-gold/5 flex flex-col justify-end p-10">
+                <div className="h-4 w-24 bg-gold/10 mb-4" />
+                <div className="h-8 w-full bg-gold/10 mb-2" />
+                <div className="h-8 w-2/3 bg-gold/10" />
+              </div>
+            ))}
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {news.map((item, i) => (
-              <motion.a 
-                key={i} 
-                href={item.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <motion.a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10 }}
@@ -84,11 +90,11 @@ export function NewsSection() {
                 <Card className="h-full relative border-none shadow-xl hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 flex flex-col overflow-hidden min-h-[420px]">
                   {/* Background Image with Overlay */}
                   <div className="absolute inset-0 z-0">
-                    <img 
-                      src={`/images/news_cover_${(i % 3) + 1}.png`} 
-                      alt="" 
+                    <img
+                      src={`/images/news_cover_${(i % 3) + 1}.png`}
+                      alt=""
                       loading="lazy"
-                      className="w-full h-full object-cover opacity-80 blur-[0.5px] saturate-[0.8] group-hover:scale-110 group-hover:blur-0 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700" 
+                      className="w-full h-full object-cover opacity-80 blur-[0.5px] saturate-[0.8] group-hover:scale-110 group-hover:blur-0 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-velvet via-velvet/40 to-transparent transition-opacity group-hover:opacity-100 duration-500" />
                   </div>
@@ -113,7 +119,7 @@ export function NewsSection() {
                       {item.description.replace(/<[^>]+>/g, '')}
                     </CardDescription>
                     <div className="flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
-                      Ler notícia completa 
+                      Ler notícia completa
                       <span className="h-px w-8 bg-gold" />
                     </div>
                   </CardContent>

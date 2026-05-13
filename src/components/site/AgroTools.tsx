@@ -9,7 +9,7 @@ export function AgroTools() {
   return (
     <section id="ferramentas" className="bg-white py-28 md:py-40 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,7 +50,7 @@ function ITCMDCalculator() {
 
   const calculate = () => {
     const numValue = parseFloat(value.replace(/\./g, "").replace(",", ".")) || 0;
-    
+
     // Alíquotas Progressivas PE (Exemplo Pernambuco)
     let rate = 0;
     if (numValue <= 200000) rate = 0.02;
@@ -58,11 +58,11 @@ function ITCMDCalculator() {
     else if (numValue <= 800000) rate = 0.06;
     else rate = 0.08;
 
-    setResult({ amount: numValue * rate, rate: rate * 100 }); 
+    setResult({ amount: numValue * rate, rate: rate * 100 });
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: -30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -82,7 +82,7 @@ function ITCMDCalculator() {
             <Label className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Valor Total do Patrimônio (R$)</Label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-velvet/40 font-sans font-bold">R$</span>
-              <Input 
+              <Input
                 type="text"
                 placeholder="0,00"
                 className="bg-white border-stone-200 h-16 pl-12 text-2xl font-sans font-bold text-velvet focus:border-gold focus:ring-gold transition-all"
@@ -91,8 +91,8 @@ function ITCMDCalculator() {
               />
             </div>
           </div>
-          
-          <Button 
+
+          <Button
             onClick={calculate}
             className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-[0.2em] font-bold shadow-lg shadow-velvet/10"
           >
@@ -102,7 +102,7 @@ function ITCMDCalculator() {
       </div>
 
       {result !== null && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-10 p-8 rounded-2xl bg-white border-l-4 border-gold shadow-md"
@@ -153,14 +153,14 @@ function CreditSimulator() {
     const p = parseFloat(amount.replace(/\./g, "").replace(",", ".")) || 0;
     const i = (parseFloat(rate) / 100);
     const n = parseInt(years);
-    
+
     // Cálculo Simples de Viabilidade (Montante Final)
     const m = p * Math.pow((1 + i), n);
     setTotal(m);
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: 30 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -179,7 +179,7 @@ function CreditSimulator() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-3">
               <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Taxa Anual (%)</Label>
-              <Input 
+              <Input
                 className="bg-white/10 border-white/20 text-white h-12 font-sans font-bold focus:bg-white/20"
                 value={rate}
                 onChange={(e) => setRate(e.target.value)}
@@ -187,7 +187,7 @@ function CreditSimulator() {
             </div>
             <div className="space-y-3">
               <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Prazo (Anos)</Label>
-              <Input 
+              <Input
                 className="bg-white/10 border-white/20 text-white h-12 font-sans font-bold focus:bg-white/20"
                 value={years}
                 onChange={(e) => setYears(e.target.value)}
@@ -198,7 +198,7 @@ function CreditSimulator() {
             <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Valor do Crédito (R$)</Label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 font-sans font-bold">R$</span>
-              <Input 
+              <Input
                 placeholder="0,00"
                 className="bg-white/10 border-white/20 text-white h-16 pl-12 text-2xl font-sans font-bold focus:bg-white/20 focus:border-gold transition-all"
                 value={amount}
@@ -206,8 +206,8 @@ function CreditSimulator() {
               />
             </div>
           </div>
-          
-          <Button 
+
+          <Button
             onClick={calculate}
             className="w-full bg-gold hover:bg-white text-velvet h-14 text-xs uppercase tracking-[0.2em] font-bold transition-all shadow-lg shadow-gold/10"
           >
@@ -217,7 +217,7 @@ function CreditSimulator() {
       </div>
 
       {total !== null && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-10 p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"

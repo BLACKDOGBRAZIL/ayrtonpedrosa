@@ -30,7 +30,7 @@ const areas: Area[] = [
   },
   {
     number: "04",
-    title: "Sucessões & Patrimônio",
+    title: "Sucessões & Inventários",
     description: "Proteção do legado familiar e eficiência fiscal. Gestão estratégica de inventários e planejamento sucessório focado na mitigação dos impactos do ITCMD, assegurando a transição pacífica e rentável dos bens.",
     icons: [ScrollText],
   },
@@ -46,7 +46,7 @@ export function Areas() {
   return (
     <section id="areas" className="relative bg-white py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -56,20 +56,20 @@ export function Areas() {
           <div className="md:col-span-7">
             <p className="text-[10px] uppercase tracking-widest text-gold">— Áreas de Atuação —</p>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] text-velvet md:text-6xl">
-              Expertise jurídica em <span className="text-gold">diversas frentes</span> de atuação.
+              Soluções jurídicas <span className="text-gold">integradas e estratégicas</span>.
             </h2>
           </div>
           <p className="text-base leading-relaxed text-velvet/70 md:col-span-5 md:text-lg">
-            Atuação técnica e especializada nas áreas cruciais para o seu negócio e patrimônio.
+            Compreendemos a complexidade do seu negócio. Oferecemos suporte legal completo para proteger seu patrimônio e viabilizar resultados.
           </p>
         </motion.div>
 
-        <div className="mt-20 grid gap-px bg-stone-100/50 md:grid-cols-2 lg:grid-cols-3 border border-stone-100/50">
+        <div className="mt-20 grid gap-px bg-gold/10 md:grid-cols-2 lg:grid-cols-3 border border-gold/10">
           {areas.map((a, idx) => {
             const Icon = a.icons[0];
             return (
-              <Link 
-                key={a.title} 
+              <Link
+                key={a.title}
                 to="/areas-de-atuacao"
                 className="group relative flex flex-col bg-white p-10 transition-all duration-500 hover:bg-cream"
               >
@@ -80,7 +80,7 @@ export function Areas() {
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
                 >
                   <div className="flex items-start justify-between">
-                    <span className="font-serif text-sm text-stone-300">{a.number}</span>
+                    <span className="font-serif text-sm text-gold/30">{a.number}</span>
                     <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/20 text-gold transition-all duration-500 group-hover:bg-gold group-hover:text-velvet group-hover:scale-110 group-hover:border-gold group-hover:shadow-lg group-hover:shadow-gold/20">
                       {Icon && <Icon className="h-5 w-5" strokeWidth={1.5} />}
                     </div>
@@ -105,7 +105,7 @@ export function Areas() {
             hash="contato"
             className="group relative flex flex-col justify-between bg-velvet p-10 text-white shadow-2xl transition-all duration-500 hover:brightness-110"
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

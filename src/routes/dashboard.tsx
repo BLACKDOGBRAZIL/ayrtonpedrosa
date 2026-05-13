@@ -1,13 +1,13 @@
 import { createFileRoute, Outlet, Link, useNavigate } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { 
-  LayoutDashboard, 
-  Users, 
-  Calendar, 
-  FileText, 
-  Settings, 
-  LogOut, 
-  Search, 
+import {
+  LayoutDashboard,
+  Users,
+  Calendar,
+  FileText,
+  Settings,
+  LogOut,
+  Search,
   Bell,
   PlusCircle,
   Globe
@@ -49,11 +49,10 @@ function DashboardLayout() {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all group ${
-                  activeTab === item.id 
-                    ? 'bg-gold text-velvet shadow-lg shadow-gold/20' 
+                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all group ${activeTab === item.id
+                    ? 'bg-gold text-velvet shadow-lg shadow-gold/20'
                     : 'text-white/50 hover:bg-white/5 hover:text-white'
-                }`}
+                  }`}
                 onClick={() => setActiveTab(item.id)}
               >
                 <Icon className={`h-5 w-5 ${activeTab === item.id ? 'text-velvet' : 'text-white/30 group-hover:text-white'}`} />
@@ -85,15 +84,15 @@ function DashboardLayout() {
         <header className="h-16 xl:h-20 bg-white border-b border-stone-100 flex items-center justify-between px-4 xl:px-10 shrink-0 z-20">
           <div className="flex items-center gap-3 xl:gap-4 flex-1 min-w-0">
             <div className="xl:hidden shrink-0">
-               <Link to="/" className="flex items-center gap-1.5 bg-gold/10 px-2 py-1.5 rounded-lg border border-gold/20">
-                 <Globe className="h-3.5 w-3.5 text-gold" />
-                 <span className="font-sans text-[9px] font-black text-velvet uppercase tracking-widest hidden sm:block">Site</span>
-               </Link>
+              <Link to="/" className="flex items-center gap-1.5 bg-gold/10 px-2 py-1.5 rounded-lg border border-gold/20">
+                <Globe className="h-3.5 w-3.5 text-gold" />
+                <span className="font-sans text-[9px] font-black text-velvet uppercase tracking-widest hidden sm:block">Site</span>
+              </Link>
             </div>
             <div className="relative flex-1 max-w-[200px] xl:max-w-96">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-stone-400" />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Buscar..."
                 className="w-full bg-stone-50 border border-stone-200 rounded-lg py-1.5 pl-9 text-xs text-velvet placeholder:text-stone-400 focus:bg-white focus:ring-1 focus:ring-gold/30 transition-all outline-none"
               />
@@ -134,9 +133,8 @@ function DashboardLayout() {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`flex flex-col items-center gap-1.5 px-2 py-1 min-w-[70px] transition-all ${
-                  isActive ? 'text-gold' : 'text-stone-400'
-                }`}
+                className={`flex flex-col items-center gap-1.5 px-2 py-1 min-w-[70px] transition-all ${isActive ? 'text-gold' : 'text-stone-400'
+                  }`}
                 onClick={() => setActiveTab(item.id)}
               >
                 <div className={`p-1.5 rounded-xl transition-all duration-300 ${isActive ? 'bg-gold/10 scale-110' : ''}`}>

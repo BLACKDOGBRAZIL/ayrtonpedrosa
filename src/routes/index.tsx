@@ -29,7 +29,7 @@ function Index() {
         <Areas />
 
         <NewsSection />
-        <InstagramFeed />
+        {/* <InstagramFeed /> */}
         <Contact />
       </main>
       <Footer year={year} />

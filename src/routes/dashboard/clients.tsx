@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { 
-  Users, 
-  Search, 
-  Plus, 
-  MoreVertical, 
-  Mail, 
+import {
+  Users,
+  Search,
+  Plus,
+  MoreVertical,
+  Mail,
   Phone,
   ArrowUpRight,
   Filter
@@ -44,8 +44,8 @@ function DashboardClients() {
         <div className="flex flex-col md:flex-row items-center gap-4 flex-1">
           <div className="relative w-full md:w-80">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-500" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Buscar por nome, CPF/CNPJ..."
               className="w-full bg-stone-50 border border-stone-200 rounded-xl py-2.5 pl-11 text-xs text-velvet placeholder:text-stone-500 focus:bg-white outline-none"
             />
@@ -63,7 +63,7 @@ function DashboardClients() {
       {/* Mobile Cards List - Mobile/Tablet Only */}
       <div className="xl:hidden space-y-4">
         {clients.map((client, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ function DashboardClients() {
                 <MoreVertical className="h-4 w-4" />
               </button>
             </div>
-            
+
             <div className="flex items-center justify-between pt-4 border-t border-stone-50">
               <div className="flex flex-col gap-1">
                 <p className="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Processos</p>
@@ -92,9 +92,8 @@ function DashboardClients() {
               </div>
               <div className="flex flex-col gap-1 items-end">
                 <p className="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Status</p>
-                <span className={`text-[8px] font-black uppercase tracking-[0.2em] px-2 py-0.5 rounded-full ${
-                  client.status === 'Ativo' ? 'bg-green-50 text-green-600' : 'bg-stone-100 text-stone-500'
-                }`}>
+                <span className={`text-[8px] font-black uppercase tracking-[0.2em] px-2 py-0.5 rounded-full ${client.status === 'Ativo' ? 'bg-green-50 text-green-600' : 'bg-stone-100 text-stone-500'
+                  }`}>
                   {client.status}
                 </span>
               </div>
@@ -121,7 +120,7 @@ function DashboardClients() {
           </thead>
           <tbody className="divide-y divide-stone-50">
             {clients.map((client, idx) => (
-              <motion.tr 
+              <motion.tr
                 key={idx}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -149,9 +148,8 @@ function DashboardClients() {
                   </div>
                 </td>
                 <td className="px-8 py-5">
-                  <span className={`text-[9px] font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-full ${
-                    client.status === 'Ativo' ? 'bg-green-50 text-green-600' : 'bg-stone-100 text-stone-500'
-                  }`}>
+                  <span className={`text-[9px] font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-full ${client.status === 'Ativo' ? 'bg-green-50 text-green-600' : 'bg-stone-100 text-stone-500'
+                    }`}>
                     {client.status}
                   </span>
                 </td>

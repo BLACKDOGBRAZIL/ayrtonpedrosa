@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { 
-  FileText, 
-  Search, 
-  Plus, 
+import {
+  FileText,
+  Search,
+  Plus,
   Folder,
   ArrowUpRight,
   MoreVertical,
@@ -59,22 +59,22 @@ function DashboardCases() {
         <div className="p-4 md:p-6 border-b border-stone-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="relative w-full md:w-96">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-500" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               placeholder="Número, Cliente ou Assunto..."
               className="w-full bg-stone-50 border border-stone-200 rounded-xl py-2.5 pl-12 text-sm text-velvet placeholder:text-stone-500 focus:bg-white outline-none"
             />
           </div>
           <div className="flex items-center gap-3">
-             <button className="flex-1 md:flex-none p-2.5 hover:bg-stone-50 rounded-xl text-stone-400 transition-colors border border-stone-100 flex justify-center">
-               <Folder className="h-4 w-4" />
-             </button>
+            <button className="flex-1 md:flex-none p-2.5 hover:bg-stone-50 rounded-xl text-stone-400 transition-colors border border-stone-100 flex justify-center">
+              <Folder className="h-4 w-4" />
+            </button>
           </div>
         </div>
 
         <div className="divide-y divide-stone-50">
           {cases.map((c, idx) => (
-            <motion.div 
+            <motion.div
               key={c.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

@@ -25,52 +25,52 @@ export function CommodityTicker() {
       const usdPct = dollarData.USDBRL.pctChange;
 
       // Real benchmarks for Agro
-      const cana: Commodity = { 
-        name: "Cana-de-Açúcar", 
-        price: "R$ 1,2154", 
-        change: "+0.12%", 
-        isUp: true, 
-        unit: "kg/ATR (Consecana)" 
+      const cana: Commodity = {
+        name: "Cana-de-Açúcar",
+        price: "R$ 1,2154",
+        change: "+0.12%",
+        isUp: true,
+        unit: "kg/ATR (Consecana)"
       };
 
       const others: Commodity[] = [
-        { 
-          name: "Dólar", 
-          price: `R$ ${usdPrice}`, 
-          change: `${usdPct}%`, 
-          isUp: parseFloat(usdPct) >= 0, 
-          unit: "USD/BRL" 
+        {
+          name: "Dólar",
+          price: `R$ ${usdPrice}`,
+          change: `${usdPct}%`,
+          isUp: parseFloat(usdPct) >= 0,
+          unit: "USD/BRL"
         },
-        { 
-          name: "Soja (Paranaguá)", 
-          price: "R$ 136,80", 
-          change: "+0.45%", 
-          isUp: true, 
-          unit: "Saca 60kg" 
+        {
+          name: "Soja (Paranaguá)",
+          price: "R$ 136,80",
+          change: "+0.45%",
+          isUp: true,
+          unit: "Saca 60kg"
         },
-        { 
-          name: "Milho (B3)", 
-          price: "R$ 61,45", 
-          change: "-0.32%", 
-          isUp: false, 
-          unit: "Saca 60kg" 
+        {
+          name: "Milho (B3)",
+          price: "R$ 61,45",
+          change: "-0.32%",
+          isUp: false,
+          unit: "Saca 60kg"
         },
-        { 
-          name: "Boi Gordo (CEPEA)", 
-          price: "R$ 234,50", 
-          change: "+1.10%", 
-          isUp: true, 
-          unit: "Arroba" 
+        {
+          name: "Boi Gordo (CEPEA)",
+          price: "R$ 234,50",
+          change: "+1.10%",
+          isUp: true,
+          unit: "Arroba"
         },
-        { 
-          name: "Açúcar VHP", 
-          price: "R$ 152,30", 
-          change: "+0.22%", 
-          isUp: true, 
-          unit: "Saca 50kg" 
+        {
+          name: "Açúcar VHP",
+          price: "R$ 152,30",
+          change: "+0.22%",
+          isUp: true,
+          unit: "Saca 50kg"
         }
       ];
-      
+
       setData(others);
       setCanaData(cana);
     } catch (error) {
@@ -103,13 +103,13 @@ export function CommodityTicker() {
           {/* Fades para o efeito de rolagem */}
           <div className="absolute left-0 top-0 bottom-0 w-8 md:w-12 bg-gradient-to-r from-[#051a14] to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-8 md:w-12 bg-gradient-to-l from-[#051a14] to-transparent z-10" />
-          
-          <motion.div 
+
+          <motion.div
             animate={{ x: [0, -2000] }}
-            transition={{ 
-              duration: 55, 
-              repeat: Infinity, 
-              ease: "linear" 
+            transition={{
+              duration: 55,
+              repeat: Infinity,
+              ease: "linear"
             }}
             className="flex items-center gap-10 md:gap-14 whitespace-nowrap"
           >
@@ -170,7 +170,7 @@ export function CommodityTicker() {
 
         {/* Refresh Button */}
         <div className="flex items-center gap-3 shrink-0 ml-4">
-          <button 
+          <button
             onClick={fetchPrices}
             className="text-zinc-700 hover:text-zinc-500 transition-all hover:scale-110 active:rotate-180 duration-500"
             title="Atualizar Cotações"

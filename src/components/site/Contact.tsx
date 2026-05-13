@@ -13,7 +13,7 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     // CRM Integration Simulation (HubSpot / Pipedrive / Linear)
     try {
       // Simulate API call to CRM Webhook
@@ -31,7 +31,7 @@ export function Contact() {
     <section id="contato" className="relative bg-white py-28 md:py-40 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-          
+
           {/* Text Content & Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -48,29 +48,29 @@ export function Contact() {
             </p>
 
             <div className="mt-12 space-y-10">
-              <ContactItem 
-                icon={Phone} 
-                title="WhatsApp e Telefone" 
-                content="+55 (81) 99758-6830" 
+              <ContactItem
+                icon={Phone}
+                title="WhatsApp e Telefone"
+                content="+55 (81) 99758-6830"
                 link="https://wa.me/5581997586830"
                 delay={0.2}
               />
-              <ContactItem 
-                icon={Mail} 
-                title="E-mail Institucional" 
-                content="contato@ayrtonpedrosa.com" 
+              <ContactItem
+                icon={Mail}
+                title="E-mail Institucional"
+                content="contato@ayrtonpedrosa.com"
                 link="mailto:contato@ayrtonpedrosa.com"
                 delay={0.3}
               />
-              <ContactItem 
-                icon={MapPin} 
-                title="Sede do Escritório" 
-                content="Recife/PE · Atendimento Nacional" 
+              <ContactItem
+                icon={MapPin}
+                title="Sede do Escritório"
+                content="Recife/PE · Atendimento Nacional"
                 delay={0.4}
               />
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -103,7 +103,7 @@ export function Contact() {
           >
             <AnimatePresence mode="wait">
               {success ? (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -117,8 +117,8 @@ export function Contact() {
                   <p className="mt-4 text-velvet/60">
                     Sua mensagem foi registrada em nosso sistema. Um consultor entrará em contato em breve.
                   </p>
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     onClick={() => setSuccess(false)}
                     className="mt-8 text-gold hover:text-velvet hover:bg-gold/5"
                   >
@@ -126,38 +126,38 @@ export function Contact() {
                   </Button>
                 </motion.div>
               ) : (
-                <motion.form 
+                <motion.form
                   key="form"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  onSubmit={handleSubmit} 
+                  onSubmit={handleSubmit}
                   className="space-y-6 rounded-2xl bg-cream p-8 md:p-10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.2)] border border-stone-200/50"
                 >
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Nome Completo</label>
-                      <Input placeholder="Seu nome" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                      <Input placeholder="Seu nome" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest text-gold font-bold">WhatsApp</label>
-                      <Input placeholder="(00) 00000-0000" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                      <Input placeholder="(00) 00000-0000" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Assunto</label>
-                    <Input placeholder="Ex: Regularização Fundiária" className="bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                    <Input placeholder="Ex: Regularização Fundiária" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Mensagem</label>
-                    <Textarea 
-                      placeholder="Como podemos ajudar?" 
-                      className="min-h-[120px] bg-white border-stone-200 focus:border-gold focus:ring-1 focus:ring-gold/20 resize-none p-4 transition-all" 
+                    <Textarea
+                      placeholder="Como podemos ajudar?"
+                      className="min-h-[120px] bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 resize-none p-4 transition-all"
                       required
                     />
                   </div>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={loading}
                     className="w-full bg-velvet hover:bg-velvet/90 text-white h-14 text-xs uppercase tracking-widest font-medium transition-all shadow-lg active:shadow-inner"
                   >
@@ -184,7 +184,7 @@ export function Contact() {
 function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: any, title: string, content: string, link?: string, delay?: number }) {
   const Wrapper = link ? "a" : "div";
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -196,8 +196,8 @@ function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: an
       </div>
       <div>
         <h4 className="text-[10px] uppercase tracking-widest text-gold font-medium">{title}</h4>
-        <Wrapper 
-          href={link} 
+        <Wrapper
+          href={link}
           target={link?.startsWith("http") ? "_blank" : undefined}
           className={`mt-1 block font-sans text-xl md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors' : ''}`}
         >
