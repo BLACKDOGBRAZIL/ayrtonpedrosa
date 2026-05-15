@@ -1,0 +1,17 @@
+<svg width="600" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- AP Monogram -->
+  <g transform="translate(30, 30)">
+    <!-- A left leg -->
+    <line x1="0" y1="60" x2="25" y2="0" stroke="white" stroke-width="2.5"/>
+    <!-- Shared vertical spine -->
+    <line x1="25" y1="0" x2="25" y2="60" stroke="white" stroke-width="2.5"/>
+    <!-- A crossbar -->
+    <line x1="12.5" y1="30" x2="25" y2="30" stroke="white" stroke-width="2.5"/>
+    <!-- P loop -->
+    <path d="M25 0H50V30H25" stroke="white" stroke-width="2.5" fill="none"/>
+  </g>
+  
+  <!-- Typography -->
+  <text x="110" y="65" fill="white" style="font-family: 'Inter', system-ui, sans-serif; font-size: 28px; font-weight: 300; letter-spacing: 0.25em;">AYRTON PEDROSA</text>
+  <text x="210" y="95" fill="white" style="font-family: 'Inter', system-ui, sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.8em; opacity: 0.8;">ADVOCACIA</text>
+</svg>

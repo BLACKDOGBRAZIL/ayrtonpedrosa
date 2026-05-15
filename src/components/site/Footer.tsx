@@ -24,10 +24,20 @@ export function Footer({ year }: { year: number }) {
         className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12"
       >
         <div className="md:col-span-5">
-          <div className="font-serif text-3xl font-semibold text-white md:text-4xl">
-            Ayrton <span className="italic text-gold">Pedrosa</span>
+          <div className="flex group items-center -ml-4">
+            <svg width="400" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-24 w-auto">
+              {/* AP Monogram */}
+              <g transform="translate(30, 30)">
+                <line x1="0" y1="60" x2="25" y2="0" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+                <line x1="25" y1="0" x2="25" y2="60" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+                <line x1="12.5" y1="30" x2="25" y2="30" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+                <path d="M25 0H50V30H25" stroke="white" strokeWidth="2.5" fill="none" className="group-hover:stroke-gold transition-colors" />
+              </g>
+              {/* Typography */}
+              <text x="110" y="65" fill="white" style={{ fontFamily: "'Inter', sans-serif", fontSize: "28px", fontWeight: 300, letterSpacing: "0.25em" }} className="group-hover:fill-gold transition-colors">AYRTON PEDROSA</text>
+              <text x="210" y="95" fill="white" style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", fontWeight: 300, letterSpacing: "0.8em", opacity: 0.8 }} className="group-hover:fill-gold transition-colors">ADVOCACIA</text>
+            </svg>
           </div>
-          <p className="mt-3 text-[11px] uppercase tracking-widest text-gold">Advocacia</p>
           <p className="mt-8 max-w-sm text-base leading-relaxed text-white/60 font-light">
             Estratégia jurídica especializada para empresas e pessoas que buscam segurança, inovação e resultados.
           </p>

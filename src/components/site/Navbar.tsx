@@ -40,11 +40,19 @@ export function Navbar() {
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex flex-col group items-start md:items-center md:text-center" onClick={() => setIsMobileMenuOpen(false)}>
-          <span className="font-serif text-xl font-bold tracking-widest text-white md:text-2xl transition-colors group-hover:text-gold leading-none">
-            Ayrton <span className="italic text-gold group-hover:text-white">Pedrosa</span>
-          </span>
-          <span className="text-[9px] uppercase tracking-[0.5em] text-white/50 mt-1.5 md:ml-0">ADVOCACIA</span>
+        <Link to="/" className="flex group items-center" onClick={() => setIsMobileMenuOpen(false)}>
+          <svg width="400" height="80" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-14 md:h-16 w-auto">
+            {/* AP Monogram */}
+            <g transform="translate(30, 30)">
+              <line x1="0" y1="60" x2="25" y2="0" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+              <line x1="25" y1="0" x2="25" y2="60" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+              <line x1="12.5" y1="30" x2="25" y2="30" stroke="white" strokeWidth="2.5" className="group-hover:stroke-gold transition-colors" />
+              <path d="M25 0H50V30H25" stroke="white" strokeWidth="2.5" fill="none" className="group-hover:stroke-gold transition-colors" />
+            </g>
+            {/* Typography */}
+            <text x="110" y="65" fill="white" style={{ fontFamily: "'Inter', sans-serif", fontSize: "28px", fontWeight: 300, letterSpacing: "0.25em" }} className="group-hover:fill-gold transition-colors">AYRTON PEDROSA</text>
+            <text x="210" y="95" fill="white" style={{ fontFamily: "'Inter', sans-serif", fontSize: "12px", fontWeight: 300, letterSpacing: "0.8em", opacity: 0.8 }} className="group-hover:fill-gold transition-colors">ADVOCACIA</text>
+          </svg>
         </Link>
 
         {/* Desktop Navigation */}
