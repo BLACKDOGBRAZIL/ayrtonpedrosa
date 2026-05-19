@@ -17,7 +17,7 @@ export function Contact() {
     // CRM Integration Simulation (HubSpot / Pipedrive / Linear)
     try {
       // Simulate API call to CRM Webhook
-      await new Promise(resolve => setTimeout(resolve, 1800));
+      await new Promise((resolve) => setTimeout(resolve, 1800));
       setSuccess(true);
       toast.success("Mensagem enviada! Sua solicitação foi registrada em nosso CRM.");
     } catch (error) {
@@ -28,10 +28,9 @@ export function Contact() {
   };
 
   return (
-    <section id="contato" className="relative bg-white py-28 md:py-40 overflow-hidden">
+    <section id="contato" className="relative bg-white py-28 md:py-40 overflow-hidden scroll-mt-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-
           {/* Text Content & Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -44,7 +43,8 @@ export function Contact() {
               Pronto para <span className="text-gold">proteger</span> o seu legado?
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-velvet/70 max-w-lg">
-              Agende uma consulta especializada. Nossa equipe está pronta para oferecer a segurança jurídica que seus negócios exigem.
+              Agende uma consulta especializada. Nossa equipe está pronta para oferecer a segurança
+              jurídica que seus negócios exigem.
             </p>
 
             <div className="mt-12 space-y-10">
@@ -86,8 +86,12 @@ export function Contact() {
                   <Instagram className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400">Siga no Instagram</p>
-                  <p className="font-sans text-xl text-velvet group-hover:text-gold transition-colors">@ayrtonpedrosa.adv</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                    Siga no Instagram
+                  </p>
+                  <p className="font-sans text-xl text-velvet group-hover:text-gold transition-colors">
+                    @ayrtonpedrosa.adv
+                  </p>
                 </div>
               </a>
             </motion.div>
@@ -113,9 +117,12 @@ export function Contact() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/10 text-gold mb-6">
                     <CheckCircle2 className="h-10 w-10" />
                   </div>
-                  <h3 className="font-serif text-3xl font-medium text-velvet">Solicitação Enviada</h3>
+                  <h3 className="font-serif text-3xl font-medium text-velvet">
+                    Solicitação Enviada
+                  </h3>
                   <p className="mt-4 text-velvet/60">
-                    Sua mensagem foi registrada em nosso sistema. Um consultor entrará em contato em breve.
+                    Sua mensagem foi registrada em nosso sistema. Um consultor entrará em contato em
+                    breve.
                   </p>
                   <Button
                     variant="ghost"
@@ -136,20 +143,40 @@ export function Contact() {
                 >
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Nome Completo</label>
-                      <Input placeholder="Seu nome" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                      <label className="text-[10px] uppercase tracking-widest text-gold font-bold">
+                        Nome Completo
+                      </label>
+                      <Input
+                        placeholder="Seu nome"
+                        className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all"
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest text-gold font-bold">WhatsApp</label>
-                      <Input placeholder="(00) 00000-0000" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                      <label className="text-[10px] uppercase tracking-widest text-gold font-bold">
+                        WhatsApp
+                      </label>
+                      <Input
+                        placeholder="(00) 00000-0000"
+                        className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all"
+                        required
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Assunto</label>
-                    <Input placeholder="Ex: Regularização Fundiária" className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all" required />
+                    <label className="text-[10px] uppercase tracking-widest text-gold font-bold">
+                      Assunto
+                    </label>
+                    <Input
+                      placeholder="Ex: Regularização Fundiária"
+                      className="bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 h-12 transition-all"
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest text-gold font-bold">Mensagem</label>
+                    <label className="text-[10px] uppercase tracking-widest text-gold font-bold">
+                      Mensagem
+                    </label>
                     <Textarea
                       placeholder="Como podemos ajudar?"
                       className="min-h-[120px] bg-white border-stone-200 text-velvet placeholder:text-velvet/40 focus:border-gold focus:ring-1 focus:ring-gold/20 resize-none p-4 transition-all"
@@ -164,7 +191,9 @@ export function Contact() {
                     {loading ? (
                       <Loader2 className="h-5 w-5 animate-spin" />
                     ) : (
-                      <span className="flex items-center gap-3">Enviar Solicitação <Send className="h-4 w-4" /></span>
+                      <span className="flex items-center gap-3">
+                        Enviar Solicitação <Send className="h-4 w-4" />
+                      </span>
                     )}
                   </Button>
                   <p className="text-[10px] text-center text-velvet/40 uppercase tracking-widest font-medium">
@@ -174,14 +203,25 @@ export function Contact() {
               )}
             </AnimatePresence>
           </motion.div>
-
         </div>
       </div>
     </section>
   );
 }
 
-function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: any, title: string, content: string, link?: string, delay?: number }) {
+function ContactItem({
+  icon: Icon,
+  title,
+  content,
+  link,
+  delay = 0,
+}: {
+  icon: any;
+  title: string;
+  content: string;
+  link?: string;
+  delay?: number;
+}) {
   const Wrapper = link ? "a" : "div";
   return (
     <motion.div
@@ -199,7 +239,7 @@ function ContactItem({ icon: Icon, title, content, link, delay = 0 }: { icon: an
         <Wrapper
           href={link}
           target={link?.startsWith("http") ? "_blank" : undefined}
-          className={`mt-1 block font-sans text-xl md:text-2xl text-velvet break-words leading-tight ${link ? 'hover:text-gold transition-colors' : ''}`}
+          className={`mt-1 block font-sans text-xl md:text-2xl text-velvet break-words leading-tight ${link ? "hover:text-gold transition-colors" : ""}`}
         >
           {content}
         </Wrapper>

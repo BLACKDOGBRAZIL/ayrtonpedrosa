@@ -21,7 +21,6 @@ function Index() {
   const { year } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background">
-
       <Navbar />
       <main>
         <Hero />

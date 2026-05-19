@@ -46,7 +46,9 @@ export function InstagramFeed() {
             className="flex items-center gap-3 mb-4"
           >
             <div className="h-px w-8 bg-gold" />
-            <span className="text-[10px] uppercase tracking-[0.5em] text-gold font-bold">Social Media</span>
+            <span className="text-[10px] uppercase tracking-[0.5em] text-gold font-bold">
+              Social Media
+            </span>
             <div className="h-px w-8 bg-gold" />
           </motion.div>
 
@@ -67,7 +69,9 @@ export function InstagramFeed() {
             className="flex items-center gap-2 text-velvet/60 hover:text-gold transition-colors font-medium tracking-wide group"
           >
             <Instagram className="h-5 w-5" />
-            <span className="border-b border-transparent group-hover:border-gold transition-all">@ayrtonpedrosa.adv</span>
+            <span className="border-b border-transparent group-hover:border-gold transition-all">
+              @ayrtonpedrosa.adv
+            </span>
           </motion.a>
         </div>
 

@@ -30,7 +30,7 @@ export function CommodityTicker() {
         price: "R$ 1,2154",
         change: "+0.12%",
         isUp: true,
-        unit: "kg/ATR (Consecana)"
+        unit: "kg/ATR (Consecana)",
       };
 
       const others: Commodity[] = [
@@ -39,36 +39,36 @@ export function CommodityTicker() {
           price: `R$ ${usdPrice}`,
           change: `${usdPct}%`,
           isUp: parseFloat(usdPct) >= 0,
-          unit: "USD/BRL"
+          unit: "USD/BRL",
         },
         {
           name: "Soja (Paranaguá)",
           price: "R$ 136,80",
           change: "+0.45%",
           isUp: true,
-          unit: "Saca 60kg"
+          unit: "Saca 60kg",
         },
         {
           name: "Milho (B3)",
           price: "R$ 61,45",
           change: "-0.32%",
           isUp: false,
-          unit: "Saca 60kg"
+          unit: "Saca 60kg",
         },
         {
           name: "Boi Gordo (CEPEA)",
           price: "R$ 234,50",
           change: "+1.10%",
           isUp: true,
-          unit: "Arroba"
+          unit: "Arroba",
         },
         {
           name: "Açúcar VHP",
           price: "R$ 152,30",
           change: "+0.22%",
           isUp: true,
-          unit: "Saca 50kg"
-        }
+          unit: "Saca 50kg",
+        },
       ];
 
       setData(others);
@@ -109,7 +109,7 @@ export function CommodityTicker() {
             transition={{
               duration: 55,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
             className="flex items-center gap-10 md:gap-14 whitespace-nowrap"
           >
@@ -122,8 +122,14 @@ export function CommodityTicker() {
                 <span className="font-sans text-[11px] font-bold text-white tracking-tight tabular-nums">
                   {canaData.price}
                 </span>
-                <div className={`flex items-center gap-0.5 text-[9px] font-bold ${canaData.isUp ? 'text-green-500' : 'text-red-500'}`}>
-                  {canaData.isUp ? <TrendingUp className="h-2.5 w-2.5" /> : <TrendingDown className="h-2.5 w-2.5" />}
+                <div
+                  className={`flex items-center gap-0.5 text-[9px] font-bold ${canaData.isUp ? "text-green-500" : "text-red-500"}`}
+                >
+                  {canaData.isUp ? (
+                    <TrendingUp className="h-2.5 w-2.5" />
+                  ) : (
+                    <TrendingDown className="h-2.5 w-2.5" />
+                  )}
                   {canaData.change}
                 </div>
               </div>
@@ -137,8 +143,14 @@ export function CommodityTicker() {
                 <span className="font-sans text-[11px] font-bold text-zinc-200 tracking-tight tabular-nums">
                   {item.price}
                 </span>
-                <div className={`flex items-center gap-0.5 text-[9px] font-bold ${item.isUp ? 'text-green-600/80' : 'text-red-600/80'}`}>
-                  {item.isUp ? <TrendingUp className="h-2.5 w-2.5" /> : <TrendingDown className="h-2.5 w-2.5" />}
+                <div
+                  className={`flex items-center gap-0.5 text-[9px] font-bold ${item.isUp ? "text-green-600/80" : "text-red-600/80"}`}
+                >
+                  {item.isUp ? (
+                    <TrendingUp className="h-2.5 w-2.5" />
+                  ) : (
+                    <TrendingDown className="h-2.5 w-2.5" />
+                  )}
                   {item.change}
                 </div>
               </div>
@@ -158,11 +170,19 @@ export function CommodityTicker() {
                 <span className="font-sans text-[12px] font-bold text-white/90 tracking-tight tabular-nums">
                   {canaData.price}
                 </span>
-                <div className={`flex items-center gap-0.5 text-[9px] font-bold ${canaData.isUp ? 'text-green-500' : 'text-red-500'}`}>
-                  {canaData.isUp ? <TrendingUp className="h-2.5 w-2.5" /> : <TrendingDown className="h-2.5 w-2.5" />}
+                <div
+                  className={`flex items-center gap-0.5 text-[9px] font-bold ${canaData.isUp ? "text-green-500" : "text-red-500"}`}
+                >
+                  {canaData.isUp ? (
+                    <TrendingUp className="h-2.5 w-2.5" />
+                  ) : (
+                    <TrendingDown className="h-2.5 w-2.5" />
+                  )}
                   {canaData.change}
                 </div>
-                <span className="text-[8px] text-zinc-600 uppercase font-bold tracking-tight bg-white/[0.03] px-1 rounded-sm">{canaData.unit}</span>
+                <span className="text-[8px] text-zinc-600 uppercase font-bold tracking-tight bg-white/[0.03] px-1 rounded-sm">
+                  {canaData.unit}
+                </span>
               </div>
             </div>
           </div>
@@ -175,15 +195,10 @@ export function CommodityTicker() {
             className="text-zinc-700 hover:text-zinc-500 transition-all hover:scale-110 active:rotate-180 duration-500"
             title="Atualizar Cotações"
           >
-            <RefreshCw className={`h-2.5 w-2.5 ${loading ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`h-2.5 w-2.5 ${loading ? "animate-spin" : ""}`} />
           </button>
         </div>
       </div>
     </div>
   );
 }
-
-
-
-
-

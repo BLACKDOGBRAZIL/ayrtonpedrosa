@@ -1,27 +1,27 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { User, Lock, ArrowRight, ShieldCheck } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { User, Lock, ArrowRight, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-export const Route = createFileRoute('/login')({
+export const Route = createFileRoute("/login")({
   component: LoginPage,
-})
+});
 
 function LoginPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Simulação de login
     if (email && password) {
-      navigate({ to: '/dashboard' })
+      navigate({ to: "/dashboard" });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-[#051a14] flex items-center justify-center p-6 relative overflow-hidden">
@@ -39,14 +39,18 @@ function LoginPage() {
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold/10 border border-gold/20 mb-6 shadow-xl">
             <ShieldCheck className="h-8 w-8 text-gold" />
           </div>
-          <h1 className="font-serif text-3xl text-white mb-2 tracking-tight">Portal do <span className="italic text-gold">Advogado</span></h1>
+          <h1 className="font-serif text-3xl text-white mb-2 tracking-tight">
+            Portal do <span className="italic text-gold">Advogado</span>
+          </h1>
           <p className="text-zinc-400 text-sm">Escritório Digital Ayrton Pedrosa</p>
         </div>
 
         <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">E-mail Profissional</Label>
+              <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">
+                E-mail Profissional
+              </Label>
               <div className="relative">
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-600" />
                 <Input
@@ -61,7 +65,9 @@ function LoginPage() {
             </div>
 
             <div className="space-y-2">
-              <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">Senha</Label>
+              <Label className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold ml-1">
+                Senha
+              </Label>
               <div className="relative">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-600" />
                 <Input
@@ -77,10 +83,20 @@ function LoginPage() {
 
             <div className="flex items-center justify-between">
               <label className="flex items-center gap-2 cursor-pointer group">
-                <input type="checkbox" className="w-4 h-4 rounded border-white/10 bg-white/5 accent-gold" />
-                <span className="text-xs text-zinc-500 group-hover:text-zinc-300 transition-colors">Lembrar acesso</span>
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-white/10 bg-white/5 accent-gold"
+                />
+                <span className="text-xs text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                  Lembrar acesso
+                </span>
               </label>
-              <button type="button" className="text-xs text-gold/80 hover:text-gold transition-colors">Esqueceu a senha?</button>
+              <button
+                type="button"
+                className="text-xs text-gold/80 hover:text-gold transition-colors"
+              >
+                Esqueceu a senha?
+              </button>
             </div>
 
             <Button
@@ -98,5 +114,5 @@ function LoginPage() {
         </p>
       </motion.div>
     </div>
-  )
+  );
 }

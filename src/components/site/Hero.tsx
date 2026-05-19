@@ -53,7 +53,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="mt-8 max-w-xl text-lg md:text-xl text-white/80 leading-relaxed"
           >
-            Assessoria jurídica sob medida para pessoas físicas e empresas que exigem sofisticação e segurança.
+            Assessoria jurídica sob medida para pessoas físicas e empresas que exigem sofisticação e
+            segurança.
           </motion.p>
 
           <motion.div

@@ -30,17 +30,37 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Ayrton Pedrosa Advocacia | Advocacia Estratégica" },
-      { name: "description", content: "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados." },
+      {
+        name: "description",
+        content:
+          "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados.",
+      },
       { name: "author", content: "Ayrton Pedrosa Advocacia" },
       { property: "og:title", content: "Ayrton Pedrosa Advocacia | Advocacia Estratégica" },
-      { property: "og:description", content: "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados." },
+      {
+        property: "og:description",
+        content:
+          "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Ayrton Pedrosa Advocacia | Advocacia Estratégica" },
-      { name: "twitter:description", content: "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Advocacia especializada em diversas áreas do Direito. Soluções jurídicas para empresas e pessoas físicas com foco em resultados.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4f90fee-a862-4645-ae81-c13e4296f5f3/id-preview-38c93f09--f9098de7-9c16-4ca9-b189-cf5cf21c3116.lovable.app-1777393605246.png",
+      },
     ],
     links: [
       {

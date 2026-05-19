@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 
 export function AgroTools() {
   return (
-    <section id="ferramentas" className="bg-white py-28 md:py-40 overflow-hidden">
+    <section id="ferramentas" className="bg-white py-28 md:py-40 overflow-hidden scroll-mt-28">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +40,7 @@ function ITCMDCalculator() {
     const digits = val.replace(/\D/g, "");
     const amount = parseFloat(digits) / 100;
     if (isNaN(amount)) return "";
-    return amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    return amount.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,14 +74,19 @@ function ITCMDCalculator() {
         </div>
         <h3 className="font-serif text-3xl font-medium text-velvet">Simulador de ITCMD</h3>
         <p className="mt-4 text-velvet/60 text-sm leading-relaxed">
-          Estime o custo tributário da sucessão patrimonial rural com base nas alíquotas progressivas estaduais.
+          Estime o custo tributário da sucessão patrimonial rural com base nas alíquotas
+          progressivas estaduais.
         </p>
 
         <div className="mt-10 space-y-6">
           <div className="space-y-3">
-            <Label className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">Valor Total do Patrimônio (R$)</Label>
+            <Label className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+              Valor Total do Patrimônio (R$)
+            </Label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-velvet/40 font-sans font-bold">R$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-velvet/40 font-sans font-bold">
+                R$
+              </span>
               <Input
                 type="text"
                 placeholder="0,00"
@@ -108,16 +113,22 @@ function ITCMDCalculator() {
           className="mt-10 p-8 rounded-2xl bg-white border-l-4 border-gold shadow-md"
         >
           <div className="flex justify-between items-center">
-            <p className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Imposto Estimado ({result.rate}%)</p>
-            <span className="text-[9px] bg-gold/10 text-gold px-2 py-0.5 rounded-full font-bold">Alíquota Progressiva</span>
+            <p className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">
+              Imposto Estimado ({result.rate}%)
+            </p>
+            <span className="text-[9px] bg-gold/10 text-gold px-2 py-0.5 rounded-full font-bold">
+              Alíquota Progressiva
+            </span>
           </div>
           <p className="text-4xl font-sans font-black text-velvet mt-2 tracking-tight">
-            {result.amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            {result.amount.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
           </p>
           <div className="mt-6 flex items-start gap-3 p-4 bg-gold/5 rounded-xl border border-gold/10">
             <Info className="h-5 w-5 text-gold shrink-0 mt-0.5" />
             <p className="text-xs text-velvet/80 leading-relaxed">
-              Com uma <span className="font-bold text-velvet">Holding Rural</span>, esse valor pode ser reduzido em até <span className="text-gold font-bold">90%</span> através de planejamento sucessório estratégico.
+              Com uma <span className="font-bold text-velvet">Holding Rural</span>, esse valor pode
+              ser reduzido em até <span className="text-gold font-bold">90%</span> através de
+              planejamento sucessório estratégico.
             </p>
           </div>
         </motion.div>
@@ -131,7 +142,6 @@ function ITCMDCalculator() {
   );
 }
 
-
 function CreditSimulator() {
   const [amount, setAmount] = useState("");
   const [rate, setRate] = useState("8.5");
@@ -142,7 +152,7 @@ function CreditSimulator() {
     const digits = val.replace(/\D/g, "");
     const amount = parseFloat(digits) / 100;
     if (isNaN(amount)) return "";
-    return amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    return amount.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
   };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -151,11 +161,11 @@ function CreditSimulator() {
 
   const calculate = () => {
     const p = parseFloat(amount.replace(/\./g, "").replace(",", ".")) || 0;
-    const i = (parseFloat(rate) / 100);
+    const i = parseFloat(rate) / 100;
     const n = parseInt(years);
 
     // Cálculo Simples de Viabilidade (Montante Final)
-    const m = p * Math.pow((1 + i), n);
+    const m = p * Math.pow(1 + i, n);
     setTotal(m);
   };
 
@@ -178,7 +188,9 @@ function CreditSimulator() {
         <div className="mt-10 space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-3">
-              <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Taxa Anual (%)</Label>
+              <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">
+                Taxa Anual (%)
+              </Label>
               <Input
                 className="bg-white/10 border-white/20 text-white h-12 font-sans font-bold focus:bg-white/20"
                 value={rate}
@@ -186,7 +198,9 @@ function CreditSimulator() {
               />
             </div>
             <div className="space-y-3">
-              <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Prazo (Anos)</Label>
+              <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">
+                Prazo (Anos)
+              </Label>
               <Input
                 className="bg-white/10 border-white/20 text-white h-12 font-sans font-bold focus:bg-white/20"
                 value={years}
@@ -195,9 +209,13 @@ function CreditSimulator() {
             </div>
           </div>
           <div className="space-y-3">
-            <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">Valor do Crédito (R$)</Label>
+            <Label className="text-[10px] uppercase tracking-widest text-gold/80 font-bold">
+              Valor do Crédito (R$)
+            </Label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 font-sans font-bold">R$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 font-sans font-bold">
+                R$
+              </span>
               <Input
                 placeholder="0,00"
                 className="bg-white/10 border-white/20 text-white h-16 pl-12 text-2xl font-sans font-bold focus:bg-white/20 focus:border-gold transition-all"
@@ -222,13 +240,19 @@ function CreditSimulator() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-10 p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
         >
-          <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Montante Total Final</p>
+          <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
+            Montante Total Final
+          </p>
           <p className="text-4xl font-sans font-black text-gold mt-2 tracking-tight">
-            {total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            {total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
           </p>
           <div className="mt-6 flex items-center justify-between text-[10px] text-white/60 border-t border-white/10 pt-4 uppercase tracking-widest">
             <span>Custo Total do Juro:</span>
-            <span className="font-sans font-bold text-white text-sm">{(total - (parseFloat(amount.replace(/\./g, "").replace(",", ".")) || 0)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+            <span className="font-sans font-bold text-white text-sm">
+              {(
+                total - (parseFloat(amount.replace(/\./g, "").replace(",", ".")) || 0)
+              ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+            </span>
           </div>
         </motion.div>
       )}
@@ -240,4 +264,3 @@ function CreditSimulator() {
     </motion.div>
   );
 }
-
