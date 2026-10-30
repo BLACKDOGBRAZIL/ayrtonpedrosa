@@ -9,23 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
-import { Route as DashboardClientsRouteImport } from './routes/dashboard/clients'
-import { Route as DashboardCasesRouteImport } from './routes/dashboard/cases'
 import { Route as DashboardAgendaRouteImport } from './routes/dashboard/agenda'
+import { Route as DashboardCasesRouteImport } from './routes/dashboard/cases'
+import { Route as DashboardClientsRouteImport } from './routes/dashboard/clients'
 
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
@@ -33,9 +28,14 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
@@ -43,9 +43,9 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardClientsRoute = DashboardClientsRouteImport.update({
-  id: '/clients',
-  path: '/clients',
+const DashboardAgendaRoute = DashboardAgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardCasesRoute = DashboardCasesRouteImport.update({
@@ -53,9 +53,9 @@ const DashboardCasesRoute = DashboardCasesRouteImport.update({
   path: '/cases',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardAgendaRoute = DashboardAgendaRouteImport.update({
-  id: '/agenda',
-  path: '/agenda',
+const DashboardClientsRoute = DashboardClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
   getParentRoute: () => DashboardRoute,
 } as any)
 
@@ -130,18 +130,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas-de-atuacao': {
@@ -151,11 +144,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard/': {
@@ -165,11 +165,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/dashboard/clients': {
-      id: '/dashboard/clients'
-      path: '/clients'
-      fullPath: '/dashboard/clients'
-      preLoaderRoute: typeof DashboardClientsRouteImport
+    '/dashboard/agenda': {
+      id: '/dashboard/agenda'
+      path: '/agenda'
+      fullPath: '/dashboard/agenda'
+      preLoaderRoute: typeof DashboardAgendaRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/cases': {
@@ -179,11 +179,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardCasesRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/dashboard/agenda': {
-      id: '/dashboard/agenda'
-      path: '/agenda'
-      fullPath: '/dashboard/agenda'
-      preLoaderRoute: typeof DashboardAgendaRouteImport
+    '/dashboard/clients': {
+      id: '/dashboard/clients'
+      path: '/clients'
+      fullPath: '/dashboard/clients'
+      preLoaderRoute: typeof DashboardClientsRouteImport
       parentRoute: typeof DashboardRoute
     }
   }
