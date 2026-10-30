@@ -191,6 +191,22 @@ export function Footer({ year }: { year: number }) {
           Ayrton Pedrosa Advocacia · OAB/PE 35.952 · {year} · Todos os Direitos Reservados
         </div>
       </div>
+
+      <a
+        href="https://www.blackdogbr.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Black Dog Studio — Design e Desenvolvimento Web Sob Medida"
+        className="group relative z-10 flex w-full items-center justify-center gap-4 bg-cream px-6 py-5 transition-colors duration-500 hover:bg-cream/90"
+      >
+        <span className="text-[9px] uppercase tracking-[0.32em] text-cream-muted sm:text-[10px]">
+          Design e Desenvolvimento por
+        </span>
+        <span className="hidden h-px w-10 bg-cream-border sm:block" />
+        <span className="text-[10px] font-medium uppercase tracking-[0.42em] text-cream-foreground underline-offset-[6px] decoration-1 transition-all duration-500 group-hover:underline sm:text-[11px]">
+          Black Dog Studio
+        </span>
+      </a>
     </footer>
   );
 }
