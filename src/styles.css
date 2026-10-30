@@ -197,6 +197,14 @@
     border-color: var(--cream-border);
   }
 
+  .bg-cream-border {
+    background-color: var(--cream-border);
+  }
+
+  .bg-cream-muted {
+    background-color: var(--cream-muted);
+  }
+
   .bg-velvet {
     background-color: var(--velvet);
   }
